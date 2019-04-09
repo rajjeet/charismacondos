@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Mobilio Condos Vaughan`,
+    description: `Mobilio Condos is a New Condo development by Menkes located at Jane and 7, Vaughan.`,
+    author: `@JayTeam`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
