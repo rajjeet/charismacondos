@@ -11,7 +11,6 @@
   overflow: hidden;
 
 
-
   #main-heading {
     color: dimgrey;
     font-weight: bolder;
@@ -30,6 +29,7 @@
 
   #call-to-action-top {
     vertical-align: top;
+
     button {
       font-size: 2em;
       background-color: darkred;
@@ -41,15 +41,17 @@
       border-radius: 10px;
       font-family: @fontFamily;
       box-shadow: 0 5px #666;
-      @media only screen and (max-width: 425px){
+      @media only screen and (max-width: 425px) {
         padding: .4em 0.9em;
         width: 75%
       }
     }
+
     button:hover {
       background-color: #7b0000;
       cursor: pointer;
     }
+
     button:active {
       background-color: #5b0000;
       transform: translateY(3px);
@@ -61,13 +63,37 @@
 
 
 #gallery {
-  .floor-plan {
-    width: 30%
-  }
-  #floor-plan-buttons {
-    display: inline;
-  }
-  #floor-plan-image-box {
+  width: 80%;
+  margin: 0 auto;
 
+  div {
+    display: inline-block;
+  }
+
+  #floor-plan-buttons {
+    margin: 0 auto;
+    width: 30%;
+
+    button {
+      width: 100px;
+      text-align: center;
+      display: block;
+    }
+
+    vertical-align: top;
+  }
+
+  #floor-plan-image-box {
+    margin: 0 auto;
+    width: 70%;
+
+    .gatsby-image-wrapper {
+      //max-width: 500px;
+      margin: 0 5%;
+      min-width: 400px;
+      min-height: 400px;
+      opacity: .4%;
+      //max-height: 600px;
+    }
   }
 }

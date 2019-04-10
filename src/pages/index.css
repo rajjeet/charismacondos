@@ -59,10 +59,31 @@ body {
   transform: translateY(3px);
   box-shadow: 0 0 #666;
 }
-#gallery .floor-plan {
-  width: 30%;
+#gallery {
+  width: 80%;
+  margin: 0 auto;
+}
+#gallery div {
+  display: inline-block;
 }
 #gallery #floor-plan-buttons {
-  display: inline;
+  margin: 0 auto;
+  width: 30%;
+  vertical-align: top;
+}
+#gallery #floor-plan-buttons button {
+  width: 100px;
+  text-align: center;
+  display: block;
+}
+#gallery #floor-plan-image-box {
+  margin: 0 auto;
+  width: 70%;
+}
+#gallery #floor-plan-image-box .gatsby-image-wrapper {
+  margin: 0 5%;
+  min-width: 400px;
+  min-height: 400px;
+  opacity: .4%;
 }
 /*# sourceMappingURL=index.css.map */

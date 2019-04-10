@@ -38,18 +38,21 @@ class IndexPage extends Component {
             </tbody>
           </table>
         </section>
-        <section id={"gallery"}>
-
-          <div id={"floor-plan-buttons"}>
-            <div id={"fp-btn-studio"} onClick={myFunction}>Studio SA</div>
-            <div id={"fp-btn-suite1ad"} onClick={myFunction}>Suite 1 AD</div>
+        <section id={"gallery-section"}>
+          <div id={"gallery"}>
+            <div id={"floor-plan-buttons"}>
+              <button id={"fp-btn-studio"} onClick={myFunction}>Studio SA</button>
+              <button id={"fp-btn-suite1ad"} onClick={myFunction}>Suite 1 AD</button>
+            </div>
+            <div id={"floor-plan-image-box"}>
+              <div id={"studio"} className="floor-plan">
+                <Img fluid={data.floorPlanStudioSA.childImageSharp.fluid}/>
+              </div>
+              <div id={"suite1ad"} className={"floor-plan"}>
+                <Img fluid={data.floorPlanSuite1AD.childImageSharp.fluid}/>
+              </div>
+            </div>
           </div>
-            <div id={"studio"} className="floor-plan">
-              <Img fluid={data.floorPlanStudioSA.childImageSharp.fluid}/>
-            </div>
-            <div id={"suite1ad"} className={"floor-plan"}>
-              <Img fluid={data.floorPlanSuite1AD.childImageSharp.fluid}/>
-            </div>
         </section>
       </Layout>
     )
