@@ -8,6 +8,7 @@ const IndexPage = () => (
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
     <section>
       <table id={"hero-banner"}>
+        <tbody>
         <tr id={"main-heading"}>
           <td>Gateway To the GTA</td>
         </tr>
@@ -15,8 +16,11 @@ const IndexPage = () => (
           <td>Where dreams come true</td>
         </tr>
         <tr id={"call-to-action-top"}>
-          <button>Reserve Your Spot</button>
+          <td>
+            <button>Reserve Your Spot</button>
+          </td>
         </tr>
+        </tbody>
       </table>
     </section>
   </Layout>
