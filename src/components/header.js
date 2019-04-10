@@ -5,13 +5,11 @@ import "./header.css";
 
 const Header = ({ siteTitle }) => (
   <header>
-    <div>
-      <h3>
+      <div>
         <Link id={'home-link'} to="/">
-          {siteTitle}
+          <h3>{siteTitle}</h3>
         </Link>
-      </h3>
-    </div>
+      </div>
   </header>
 )
 
