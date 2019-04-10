@@ -44,6 +44,12 @@ body {
   font-family: Ubuntu, Geneva, sans-serif;
   box-shadow: 0 5px #666;
 }
+@media only screen and (max-width: 425px) {
+  #hero-banner #call-to-action-top button {
+    padding: .4em 0.9em;
+    width: 75%;
+  }
+}
 #hero-banner #call-to-action-top button:hover {
   background-color: #7b0000;
   cursor: pointer;
@@ -52,5 +58,9 @@ body {
   background-color: #5b0000;
   transform: translateY(3px);
   box-shadow: 0 0 #666;
+}
+#selling-features {
+  width: 80%;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=index.css.map */

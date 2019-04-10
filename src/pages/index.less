@@ -9,6 +9,9 @@
   width: 100%;
   text-align: center;
   overflow: hidden;
+
+
+
   #main-heading {
     color: dimgrey;
     font-weight: bolder;
@@ -38,6 +41,10 @@
       border-radius: 10px;
       font-family: @fontFamily;
       box-shadow: 0 5px #666;
+      @media only screen and (max-width: 425px){
+        padding: .4em 0.9em;
+        width: 75%
+      }
     }
     button:hover {
       background-color: #7b0000;
@@ -50,4 +57,10 @@
     }
 
   }
+}
+
+
+#selling-features {
+  width: 80%;
+  margin: 0 auto;
 }

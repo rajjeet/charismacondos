@@ -2,11 +2,13 @@ import React from "react"
 import "./index.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
-    <section>
+    <section id={'banner'}>
       <table id={"hero-banner"}>
         <tbody>
         <tr id={"main-heading"}>
@@ -23,8 +25,23 @@ const IndexPage = () => (
         </tbody>
       </table>
     </section>
+    <section id={'selling-features'}>
+      {/*<Img fluid={data.placeholderImage.childImageSharp.fluid}/>*/}
+    </section>
   </Layout>
 )
+
+export const query = graphql`
+  query {
+    placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
 
