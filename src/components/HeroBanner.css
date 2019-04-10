@@ -3,8 +3,11 @@ main {
 }
 body {
   font-family: Ubuntu, Geneva, sans-serif;
-  background: mintcream;
+  background: snow;
   color: darkred;
+}
+h1 {
+  font-size: 3em;
 }
 #hero-banner {
   background: url('../images/mobilio_rendered_drawing_edited.jpeg') no-repeat center center scroll;
@@ -35,7 +38,7 @@ body {
 }
 #hero-banner #call-to-action-top button {
   font-size: 2em;
-  background-color: darkred;
+  background-color: #8b0000;
   color: whitesmoke;
   border: none;
   text-shadow: 2px 2px 3px dimgrey;

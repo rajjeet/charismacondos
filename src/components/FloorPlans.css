@@ -1,3 +1,14 @@
+main {
+  margin: 0 auto;
+}
+body {
+  font-family: Ubuntu, Geneva, sans-serif;
+  background: snow;
+  color: darkred;
+}
+h1 {
+  font-size: 3em;
+}
 #gallery {
   width: 80%;
   margin: 0 auto;
@@ -10,23 +21,48 @@
   width: 30%;
   vertical-align: top;
 }
+@media (max-width: 800px) {
+  #gallery #floor-plan-buttons {
+    width: 30%;
+  }
+}
 #gallery #floor-plan-buttons button {
   width: 80%;
-  margin: 1em auto;
+  margin: .8em auto;
   text-align: center;
   display: block;
+  font-size: 1.3em;
+  border-radius: 5px;
+  padding: .4em 0 .4em 0;
+  background: whitesmoke;
+  border: 1px solid #000000;
+}
+#gallery #floor-plan-buttons button:active {
+  background: #666666;
 }
 #gallery #floor-plan-image-box {
   margin: 0 auto;
   width: 70%;
 }
+@media (max-width: 800px) {
+  #gallery #floor-plan-image-box {
+    width: 70%;
+    margin: 0;
+  }
+}
 #gallery #floor-plan-image-box .floor-plan {
   display: none;
+  margin: 0 auto;
+  width: 60%;
+}
+@media (max-width: 800px) {
+  #gallery #floor-plan-image-box .floor-plan {
+    width: 100%;
+  }
 }
 #gallery #floor-plan-image-box .gatsby-image-wrapper {
-  margin: 0 5%;
   min-width: 400px;
   min-height: 400px;
-  opacity: .4%;
+  max-height: 600px;
 }
 /*# sourceMappingURL=FloorPlans.css.map */

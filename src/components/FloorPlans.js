@@ -6,11 +6,14 @@ import { StaticQuery, graphql } from "gatsby"
 
 
 const myFunction = (event) => {
-  let id = event.target.id.replace("fp-btn-", "")
+  let button = event.target
+  let id = button.id.replace("fp-btn-", "")
   let ele = document.getElementById(id)
   let floorPlans = document.getElementsByClassName("floor-plan")
+  let floorPlanButtons = document.getElementsByClassName("fp-btn")
   Object.keys(floorPlans).forEach(key => floorPlans[key].style.display = "none")
-  console.log(ele)
+  Object.keys(floorPlanButtons).forEach(key => floorPlanButtons[key].style.backgroundColor = "whitesmoke")
+  button.style.backgroundColor = "lightgrey";
   ele.style.display = "block"
 }
 
@@ -20,7 +23,7 @@ export const FloorPlans = ({ data }) => (
   query {
     floorPlanStudioSA: file(relativePath: { eq: "Mobilio-Condos-Studio-SA-floorplan-v3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 300, maxHeight: 600) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -92,17 +95,18 @@ export const FloorPlans = ({ data }) => (
   }
 `} render={data => (
     <div id={"gallery"}>
+      <h1>Floor Plans</h1>
       <div id={"floor-plan-buttons"}>
-        <button id={"fp-btn-studio"} onClick={myFunction}>Studio SA</button>
-        <button id={"fp-btn-suite1ad"} onClick={myFunction}>Suite 1 A-D</button>
-        <button id={"fp-btn-suite1a"} onClick={myFunction}>Suite 1 A</button>
-        <button id={"fp-btn-suite1bd"} onClick={myFunction}>Suite 1 B-D</button>
-        <button id={"fp-btn-suite1b"} onClick={myFunction}>Suite 1 B</button>
-        <button id={"fp-btn-suite1cd"} onClick={myFunction}>Suite 1 C-D</button>
-        <button id={"fp-btn-suite1dd"} onClick={myFunction}>Suite 1 D-D</button>
-        <button id={"fp-btn-suite2a"} onClick={myFunction}>Suite 2 A</button>
-        <button id={"fp-btn-suite2e"} onClick={myFunction}>Suite E</button>
-        <button id={"fp-btn-suite2f"} onClick={myFunction}>Suite F</button>
+        <button id={"fp-btn-studio"} className={'fp-btn'} onClick={myFunction}>Studio SA</button>
+        <button id={"fp-btn-suite1ad"} className={'fp-btn'} onClick={myFunction}>Suite 1 A-D</button>
+        <button id={"fp-btn-suite1a"} className={'fp-btn'} onClick={myFunction}>Suite 1 A</button>
+        <button id={"fp-btn-suite1bd"} className={'fp-btn'}onClick={myFunction}>Suite 1 B-D</button>
+        <button id={"fp-btn-suite1b"} className={'fp-btn'} onClick={myFunction}>Suite 1 B</button>
+        <button id={"fp-btn-suite1cd"} className={'fp-btn'} onClick={myFunction}>Suite 1 C-D</button>
+        <button id={"fp-btn-suite1dd"} className={'fp-btn'} onClick={myFunction}>Suite 1 D-D</button>
+        <button id={"fp-btn-suite2a"} className={'fp-btn'} onClick={myFunction}>Suite 2 A</button>
+        <button id={"fp-btn-suite2e"} className={'fp-btn'} onClick={myFunction}>Suite E</button>
+        <button id={"fp-btn-suite2f"} className={'fp-btn'} onClick={myFunction}>Suite F</button>
       </div>
       <div id={"floor-plan-image-box"}>
         <div id={"studio"} className="floor-plan">
