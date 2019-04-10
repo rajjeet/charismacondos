@@ -59,8 +59,10 @@ body {
   transform: translateY(3px);
   box-shadow: 0 0 #666;
 }
-#selling-features {
-  width: 80%;
-  margin: 0 auto;
+#gallery .floor-plan {
+  width: 30%;
+}
+#gallery #floor-plan-buttons {
+  display: inline;
 }
 /*# sourceMappingURL=index.css.map */
