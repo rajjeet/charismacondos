@@ -6,11 +6,11 @@ import "./header.css";
 const Header = ({ siteTitle }) => (
   <header>
     <div>
-      <h1>
+      <h3>
         <Link id={'home-link'} to="/">
           {siteTitle}
         </Link>
-      </h1>
+      </h3>
     </div>
   </header>
 )
