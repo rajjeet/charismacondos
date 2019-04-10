@@ -1,0 +1,32 @@
+#gallery {
+  width: 80%;
+  margin: 0 auto;
+}
+#gallery div {
+  display: inline-block;
+}
+#gallery #floor-plan-buttons {
+  margin: 0 auto;
+  width: 30%;
+  vertical-align: top;
+}
+#gallery #floor-plan-buttons button {
+  width: 80%;
+  margin: 1em auto;
+  text-align: center;
+  display: block;
+}
+#gallery #floor-plan-image-box {
+  margin: 0 auto;
+  width: 70%;
+}
+#gallery #floor-plan-image-box .floor-plan {
+  display: none;
+}
+#gallery #floor-plan-image-box .gatsby-image-wrapper {
+  margin: 0 5%;
+  min-width: 400px;
+  min-height: 400px;
+  opacity: .4%;
+}
+/*# sourceMappingURL=FloorPlans.css.map */
