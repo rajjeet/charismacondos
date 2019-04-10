@@ -14,6 +14,9 @@ const IndexPage = () => (
         <tr id={"supporting-headline"}>
           <td>Where dreams come true</td>
         </tr>
+        <tr id={"call-to-action-top"}>
+          <button>Reserve Your Spot</button>
+        </tr>
       </table>
     </section>
   </Layout>

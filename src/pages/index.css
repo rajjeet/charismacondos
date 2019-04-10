@@ -1,3 +1,11 @@
+main {
+  margin: 0 auto;
+}
+body {
+  font-family: Ubuntu, Geneva, sans-serif;
+  background: mintcream;
+  color: darkred;
+}
 #hero-banner {
   background: url('../images/mobilio_rendered_drawing_edited.jpeg') no-repeat center center fixed;
   height: 600px;
@@ -9,16 +17,40 @@
   overflow: hidden;
 }
 #hero-banner #main-heading {
-  color: darkred;
-  font-weight: bold;
+  color: dimgrey;
+  font-weight: bolder;
   font-size: 4em;
   vertical-align: bottom;
-  text-shadow: 1px 1px 20px #eee;
+  text-shadow: 2px 2px 2px whitesmoke;
 }
 #hero-banner #supporting-headline {
-  vertical-align: top;
+  vertical-align: middle;
   color: #444;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 2px white;
+  height: 2em;
+}
+#hero-banner #call-to-action-top {
+  vertical-align: top;
+}
+#hero-banner #call-to-action-top button {
   font-size: 2em;
-  text-shadow: 1px 1px 20px #eee;
+  background-color: darkred;
+  color: whitesmoke;
+  border: none;
+  text-shadow: 2px 2px 3px dimgrey;
+  padding: .4em 2em;
+  border-radius: 10px;
+  font-family: Ubuntu, Geneva, sans-serif;
+  box-shadow: 0 5px #666;
+}
+#hero-banner #call-to-action-top button:hover {
+  background-color: #7b0000;
+  cursor: pointer;
+}
+#hero-banner #call-to-action-top button:active {
+  background-color: #5b0000;
+  transform: translateY(3px);
+  box-shadow: 0 0 #666;
 }
 /*# sourceMappingURL=index.css.map */
