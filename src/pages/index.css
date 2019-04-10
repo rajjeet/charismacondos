@@ -72,13 +72,17 @@ body {
   vertical-align: top;
 }
 #gallery #floor-plan-buttons button {
-  width: 100px;
+  width: 80%;
+  margin: 1em auto;
   text-align: center;
   display: block;
 }
 #gallery #floor-plan-image-box {
   margin: 0 auto;
   width: 70%;
+}
+#gallery #floor-plan-image-box .floor-plan {
+  display: none;
 }
 #gallery #floor-plan-image-box .gatsby-image-wrapper {
   margin: 0 5%;
