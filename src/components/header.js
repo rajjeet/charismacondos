@@ -7,7 +7,7 @@ const Header = ({ siteTitle }) => (
   <header>
       <div>
         <Link id={'home-link'} to="/">
-          <h3>{siteTitle}</h3>
+          <p>{siteTitle}</p>
         </Link>
       </div>
   </header>

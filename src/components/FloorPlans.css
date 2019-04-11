@@ -4,50 +4,79 @@ main {
 body {
   font-family: Ubuntu, Geneva, sans-serif;
   background: snow;
-  color: darkred;
 }
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: darkred;
   font-size: 3em;
 }
 #gallery {
   width: 80%;
   margin: 0 auto;
+  text-align: center;
+}
+@media (max-width: 660px) {
+  #gallery {
+    width: 100%;
+  }
+}
+#gallery h1 {
+  margin-bottom: 0;
+}
+#gallery p {
+  margin-top: .2em;
 }
 #gallery div {
   display: inline-block;
 }
 #gallery #floor-plan-buttons {
+  vertical-align: top;
   margin: 0 auto;
   width: 30%;
-  vertical-align: top;
 }
-@media (max-width: 800px) {
+@media (max-width: 660px) {
   #gallery #floor-plan-buttons {
-    width: 30%;
+    width: 100%;
   }
 }
 #gallery #floor-plan-buttons button {
   width: 80%;
-  margin: .8em auto;
-  text-align: center;
   display: block;
-  font-size: 1.3em;
-  border-radius: 5px;
   padding: .4em 0 .4em 0;
+  margin: .8em auto;
+  border-radius: 5px;
+  font-size: 1.3em;
+  text-align: center;
+  border: 1px solid black;
   background: whitesmoke;
-  border: 1px solid #000000;
+  outline: none;
 }
-#gallery #floor-plan-buttons button:active {
-  background: #666666;
+@media (max-width: 660px) {
+  #gallery #floor-plan-buttons button {
+    display: inline;
+    width: 40%;
+    margin: .1em .1em;
+  }
+}
+#gallery #floor-plan-buttons button:hover {
+  background: #aaaaaa;
+}
+#gallery #floor-plan-buttons button:first-of-type {
+  background-color: grey;
+  color: white;
 }
 #gallery #floor-plan-image-box {
   margin: 0 auto;
   width: 70%;
 }
-@media (max-width: 800px) {
+@media (max-width: 660px) {
   #gallery #floor-plan-image-box {
-    width: 70%;
-    margin: 0;
+    width: 100%;
+    margin: 1em 0 0 0;
   }
 }
 #gallery #floor-plan-image-box .floor-plan {
@@ -55,13 +84,16 @@ h1 {
   margin: 0 auto;
   width: 60%;
 }
-@media (max-width: 800px) {
+@media (max-width: 660px) {
   #gallery #floor-plan-image-box .floor-plan {
-    width: 100%;
+    width: 90%;
   }
 }
+#gallery #floor-plan-image-box .floor-plan:first-of-type {
+  display: block;
+}
 #gallery #floor-plan-image-box .gatsby-image-wrapper {
-  min-width: 400px;
+  min-width: 100%;
   min-height: 400px;
   max-height: 600px;
 }

@@ -3,45 +3,73 @@
 #gallery {
   width: 80%;
   margin: 0 auto;
+  text-align: center;
+
+  @media (max-width: @mobileBreakpoint) {
+    width: 100%;
+  }
+
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: .2em;
+  }
 
   div {
     display: inline-block;
   }
 
+
   #floor-plan-buttons {
+    vertical-align: top;
     margin: 0 auto;
     width: 30%;
 
-    @media (max-width: 800px) {
-      width: 30%;
+    @media (max-width: @mobileBreakpoint) {
+      width: 100%;
     }
 
     button {
       width: 80%;
-      margin: .8em auto;
-      text-align: center;
       display: block;
-      font-size: 1.3em;
-      border-radius: 5px;
       padding: .4em 0 .4em 0;
+      margin: .8em auto;
+      border-radius: 5px;
+      font-size: 1.3em;
+      text-align: center;
+      border: 1px solid black;
       background: whitesmoke;
-      border: 1px solid black
+      outline: none;
+
+      @media (max-width: @mobileBreakpoint) {
+        display: inline;
+        width: 40%;
+        margin: .1em .1em;
+      }
     }
 
-    button:active {
-      background: #666666;
+    button:hover {
+      background: #aaaaaa;
     }
 
-    vertical-align: top;
+    button:first-of-type {
+      background-color: grey;
+      color: white;
+    }
+
   }
+
 
   #floor-plan-image-box {
     margin: 0 auto;
     width: 70%;
 
-    @media (max-width: 800px) {
-      width: 70%;
-      margin: 0;
+    @media (max-width: @mobileBreakpoint) {
+      width: 100%;
+      margin: 1em 0 0 0;
     }
 
     .floor-plan {
@@ -49,13 +77,18 @@
       margin: 0 auto;
       width: 60%;
 
-      @media (max-width: 800px) {
-        width: 100%;
+      @media (max-width: @mobileBreakpoint) {
+        width: 90%;
       }
+
+    }
+
+    .floor-plan:first-of-type {
+      display: block;
     }
 
     .gatsby-image-wrapper {
-      min-width: 400px;
+      min-width: 100%;
       min-height: 400px;
       max-height: 600px;
     }

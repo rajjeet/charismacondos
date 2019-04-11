@@ -12,8 +12,12 @@ const myFunction = (event) => {
   let floorPlans = document.getElementsByClassName("floor-plan")
   let floorPlanButtons = document.getElementsByClassName("fp-btn")
   Object.keys(floorPlans).forEach(key => floorPlans[key].style.display = "none")
-  Object.keys(floorPlanButtons).forEach(key => floorPlanButtons[key].style.backgroundColor = "whitesmoke")
-  button.style.backgroundColor = "lightgrey";
+  Object.keys(floorPlanButtons).forEach(key => {
+    floorPlanButtons[key].style.backgroundColor = "whitesmoke"
+    floorPlanButtons[key].style.color = "black"
+  })
+  button.style.backgroundColor = "grey";
+  button.style.color = "white";
   ele.style.display = "block"
 }
 
@@ -23,70 +27,70 @@ export const FloorPlans = ({ data }) => (
   query {
     floorPlanStudioSA: file(relativePath: { eq: "Mobilio-Condos-Studio-SA-floorplan-v3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300, maxHeight: 600) {
+        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     floorPlanSuite1AD: file(relativePath: { eq: "Mobilio-Condos-Suite-1A-D-floorplan-v3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     floorPlanSuite1A: file(relativePath: { eq: "Mobilio-Condos-Suite-1A-floorplan-v3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     floorPlanSuite1BD: file(relativePath: { eq: "Mobilio-Condos-Suite-1B-D-floorplan-v3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     floorPlanSuite1B: file(relativePath: { eq: "Mobilio-Condos-Suite-1B-floorplan-v3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     floorPlanSuite1CD: file(relativePath: { eq: "Mobilio-Condos-Suite-1C-D-floorplan-v3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     floorPlanSuite1DD: file(relativePath: { eq: "Mobilio-Condos-Suite-1D-D-floorplan-v3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     floorPlanSuite2A: file(relativePath: { eq: "Mobilio-Condos-Suite-2A-floorplan-v3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     floorPlanSuite2E: file(relativePath: { eq: "Mobilio-Condos-Suite-2E-floorplan-v3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     floorPlanSuite2F: file(relativePath: { eq: "Mobilio-Condos-Suite-2F-floorplan-v3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -96,6 +100,7 @@ export const FloorPlans = ({ data }) => (
 `} render={data => (
     <div id={"gallery"}>
       <h1>Floor Plans</h1>
+      <p>Find the perfect layout that suits your lifestyle</p>
       <div id={"floor-plan-buttons"}>
         <button id={"fp-btn-studio"} className={'fp-btn'} onClick={myFunction}>Studio SA</button>
         <button id={"fp-btn-suite1ad"} className={'fp-btn'} onClick={myFunction}>Suite 1 A-D</button>
