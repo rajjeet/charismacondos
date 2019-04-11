@@ -15,7 +15,7 @@ h6 {
   color: darkred;
   font-size: 3em;
 }
-s .call-to-action-btn {
+.call-to-action-btn {
   font-size: 2em;
   background-color: #8b0000;
   color: whitesmoke;
@@ -27,7 +27,7 @@ s .call-to-action-btn {
   font-family: Ubuntu, Geneva, sans-serif;
 }
 @media (max-width: 660px) {
-  s .call-to-action-btn {
+  .call-to-action-btn {
     padding: .3em 0.5em;
     font-size: 1.3em;
   }

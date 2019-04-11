@@ -1,3 +1,51 @@
+main {
+  margin: 0 auto;
+}
+body {
+  font-family: Ubuntu, Geneva, sans-serif;
+  background: snow;
+  color: #444444;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: darkred;
+  font-size: 3em;
+}
+.call-to-action-btn {
+  font-size: 2em;
+  background-color: #8b0000;
+  color: whitesmoke;
+  border: none;
+  outline: none;
+  text-shadow: 2px 2px 3px dimgrey;
+  padding: .4em 2em;
+  border-radius: 10px;
+  font-family: Ubuntu, Geneva, sans-serif;
+}
+@media (max-width: 660px) {
+  .call-to-action-btn {
+    padding: .3em 0.5em;
+    font-size: 1.3em;
+  }
+}
+.call-to-action-btn:hover {
+  background-color: #7b0000;
+  cursor: pointer;
+}
+.call-to-action-btn:active {
+  background-color: #5b0000;
+}
+h1 {
+  margin-bottom: 0;
+}
+p,
+span {
+  margin-top: .2em;
+}
 #location {
   width: 80%;
   margin: 0 auto;
@@ -21,15 +69,41 @@
   display: inline;
   font-weight: bold;
 }
+@media (max-width: 660px) {
+  #location #location-kpi .kpi-card span:first-of-type {
+    font-size: 2em;
+  }
+}
+@media (max-width: 1023px) {
+  #location #location-kpi .kpi-card span:first-of-type {
+    font-size: 2em;
+  }
+}
 #location #location-kpi .kpi-card span:first-of-type:hover {
-  margin: 0 auto;
-  font-size: 4em;
-  padding-bottom: 0;
-  display: inline;
-  font-weight: bold;
   color: darkred;
 }
 #location #location-kpi .kpi-card span {
   font-size: 0.8em;
+}
+@media (max-width: 1023px) {
+  #location #location-kpi .kpi-card {
+    width: 20%;
+    margin: 0 5%;
+    text-align: left;
+  }
+  #location #location-kpi .kpi-card div {
+    display: inline;
+    padding-left: .5em;
+  }
+}
+@media (max-width: 660px) {
+  #location #location-kpi .kpi-card {
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+  }
+  #location #location-kpi .kpi-card div {
+    display: block;
+  }
 }
 /*# sourceMappingURL=Location.css.map */
