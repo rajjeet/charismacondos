@@ -17,3 +17,29 @@ h1,h2,h3,h4,h5,h6 {
   color: darkred;
   font-size: 3em;
 }
+
+.call-to-action-btn {
+  font-size: 2em;
+  background-color: @primaryBtnColor;
+  color: whitesmoke;
+  border: none;
+  outline: none;
+
+  text-shadow: 2px 2px 3px dimgrey;
+  padding: .4em 2em;
+  border-radius: 10px;
+  font-family: @fontFamily;
+  @media (max-width: @mobileBreakpoint) {
+    padding: .3em 0.5em;
+    font-size: 1.3em;
+  }
+}
+
+.call-to-action-btn:hover {
+  background-color: #7b0000;
+  cursor: pointer;
+}
+
+.call-to-action-btn:active {
+  background-color: #5b0000;
+}

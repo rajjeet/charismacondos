@@ -144,6 +144,7 @@ export const FloorPlans = ({ data }) => (
         <div id={"suite2f"} className={"floor-plan"}>
           <Img fluid={data.floorPlanSuite2F.childImageSharp.fluid}/>
         </div>
+        <button className={'call-to-action-btn'}>Reserve Floor Plan</button>
       </div>
     </div>
   )}

@@ -12,7 +12,7 @@ export const HeroBanner = () => (
     </tr>
     <tr id={"call-to-action-top"}>
       <td>
-        <button>Reserve Your Spot</button>
+        <button className="call-to-action-btn">Reserve Your Spot</button>
       </td>
     </tr>
     </tbody>

@@ -14,6 +14,30 @@ h6 {
   color: darkred;
   font-size: 3em;
 }
+.call-to-action-btn {
+  font-size: 2em;
+  background-color: #8b0000;
+  color: whitesmoke;
+  border: none;
+  outline: none;
+  text-shadow: 2px 2px 3px dimgrey;
+  padding: .4em 2em;
+  border-radius: 10px;
+  font-family: Ubuntu, Geneva, sans-serif;
+}
+@media (max-width: 660px) {
+  .call-to-action-btn {
+    padding: .3em 0.5em;
+    font-size: 1.3em;
+  }
+}
+.call-to-action-btn:hover {
+  background-color: #7b0000;
+  cursor: pointer;
+}
+.call-to-action-btn:active {
+  background-color: #5b0000;
+}
 #hero-banner {
   background: url('../images/mobilio_rendered_drawing_edited.jpeg') no-repeat center center scroll;
   height: 600px;
@@ -40,31 +64,5 @@ h6 {
 }
 #hero-banner #call-to-action-top {
   vertical-align: top;
-}
-#hero-banner #call-to-action-top button {
-  font-size: 2em;
-  background-color: #8b0000;
-  color: whitesmoke;
-  border: none;
-  text-shadow: 2px 2px 3px dimgrey;
-  padding: .4em 2em;
-  border-radius: 10px;
-  font-family: Ubuntu, Geneva, sans-serif;
-  box-shadow: 0 5px #666;
-}
-@media only screen and (max-width: 425px) {
-  #hero-banner #call-to-action-top button {
-    padding: .4em 0.9em;
-    width: 75%;
-  }
-}
-#hero-banner #call-to-action-top button:hover {
-  background-color: #7b0000;
-  cursor: pointer;
-}
-#hero-banner #call-to-action-top button:active {
-  background-color: #5b0000;
-  transform: translateY(3px);
-  box-shadow: 0 0 #666;
 }
 /*# sourceMappingURL=HeroBanner.css.map */
