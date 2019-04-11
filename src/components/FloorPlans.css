@@ -76,7 +76,7 @@ h6 {
   font-size: 1.3em;
   text-align: center;
   border: 1px solid black;
-  background: whitesmoke;
+  background-color: whitesmoke;
   outline: none;
 }
 @media (max-width: 660px) {
@@ -87,7 +87,9 @@ h6 {
   }
 }
 #gallery #floor-plan-buttons button:hover {
-  background: #aaaaaa;
+  background-color: darkred !important;
+  color: white !important;
+  cursor: pointer;
 }
 #gallery #floor-plan-buttons button:first-of-type {
   background-color: grey;
