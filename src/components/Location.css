@@ -1,0 +1,35 @@
+#location {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+#location iframe {
+  width: 100%;
+}
+#location #location-kpi {
+  margin-bottom: 1em;
+}
+#location #location-kpi .kpi-card {
+  display: inline-block;
+  margin: 0 auto;
+  width: 15%;
+}
+#location #location-kpi .kpi-card span:first-of-type {
+  margin: 0 auto;
+  font-size: 4em;
+  padding-bottom: 0;
+  display: inline;
+  font-weight: bold;
+}
+#location #location-kpi .kpi-card span:first-of-type:hover {
+  margin: 0 auto;
+  font-size: 4em;
+  padding-bottom: 0;
+  display: inline;
+  font-weight: bold;
+  color: darkred;
+}
+#location #location-kpi .kpi-card span {
+  font-size: 0.8em;
+}
+/*# sourceMappingURL=Location.css.map */

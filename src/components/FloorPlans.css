@@ -4,6 +4,7 @@ main {
 body {
   font-family: Ubuntu, Geneva, sans-serif;
   background: snow;
+  color: #444444;
 }
 h1,
 h2,
@@ -14,7 +15,7 @@ h6 {
   color: darkred;
   font-size: 3em;
 }
-.call-to-action-btn {
+s .call-to-action-btn {
   font-size: 2em;
   background-color: #8b0000;
   color: whitesmoke;
@@ -26,7 +27,7 @@ h6 {
   font-family: Ubuntu, Geneva, sans-serif;
 }
 @media (max-width: 660px) {
-  .call-to-action-btn {
+  s .call-to-action-btn {
     padding: .3em 0.5em;
     font-size: 1.3em;
   }
@@ -38,6 +39,13 @@ h6 {
 .call-to-action-btn:active {
   background-color: #5b0000;
 }
+h1 {
+  margin-bottom: 0;
+}
+p,
+span {
+  margin-top: .2em;
+}
 #gallery {
   width: 80%;
   margin: 0 auto;
@@ -47,12 +55,6 @@ h6 {
   #gallery {
     width: 100%;
   }
-}
-#gallery h1 {
-  margin-bottom: 0;
-}
-#gallery p {
-  margin-top: .2em;
 }
 #gallery div {
   display: inline-block;
