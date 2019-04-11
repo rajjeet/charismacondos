@@ -1,7 +1,7 @@
 import Img from "gatsby-image"
 import React from "react"
 import PropTypes from "prop-types"
-import './FloorPlans.css'
+import "./FloorPlans.css"
 import { StaticQuery, graphql } from "gatsby"
 
 
@@ -16,8 +16,8 @@ const myFunction = (event) => {
     floorPlanButtons[key].style.backgroundColor = "whitesmoke"
     floorPlanButtons[key].style.color = "black"
   })
-  button.style.backgroundColor = "grey";
-  button.style.color = "white";
+  button.style.backgroundColor = "grey"
+  button.style.color = "white"
   ele.style.display = "block"
 }
 
@@ -98,55 +98,57 @@ export const FloorPlans = ({ data }) => (
 
   }
 `} render={data => (
-    <div id={"gallery"}>
-      <h1>Floor Plans</h1>
-      <p>Find the perfect layout that suits your lifestyle</p>
-      <div id={"floor-plan-buttons"}>
-        <button id={"fp-btn-studio"} className={'fp-btn'} onClick={myFunction}>Studio SA</button>
-        <button id={"fp-btn-suite1ad"} className={'fp-btn'} onClick={myFunction}>Suite 1 A-D</button>
-        <button id={"fp-btn-suite1a"} className={'fp-btn'} onClick={myFunction}>Suite 1 A</button>
-        <button id={"fp-btn-suite1bd"} className={'fp-btn'}onClick={myFunction}>Suite 1 B-D</button>
-        <button id={"fp-btn-suite1b"} className={'fp-btn'} onClick={myFunction}>Suite 1 B</button>
-        <button id={"fp-btn-suite1cd"} className={'fp-btn'} onClick={myFunction}>Suite 1 C-D</button>
-        <button id={"fp-btn-suite1dd"} className={'fp-btn'} onClick={myFunction}>Suite 1 D-D</button>
-        <button id={"fp-btn-suite2a"} className={'fp-btn'} onClick={myFunction}>Suite 2 A</button>
-        <button id={"fp-btn-suite2e"} className={'fp-btn'} onClick={myFunction}>Suite E</button>
-        <button id={"fp-btn-suite2f"} className={'fp-btn'} onClick={myFunction}>Suite F</button>
+    <section id={"gallery-section"}>
+      <div id={"gallery"}>
+        <h1>Floor Plans</h1>
+        <p>Find the perfect layout that suits your lifestyle</p>
+        <div id={"floor-plan-buttons"}>
+          <button id={"fp-btn-studio"} className={"fp-btn"} onClick={myFunction}>Studio SA</button>
+          <button id={"fp-btn-suite1ad"} className={"fp-btn"} onClick={myFunction}>Suite 1 A-D</button>
+          <button id={"fp-btn-suite1a"} className={"fp-btn"} onClick={myFunction}>Suite 1 A</button>
+          <button id={"fp-btn-suite1bd"} className={"fp-btn"} onClick={myFunction}>Suite 1 B-D</button>
+          <button id={"fp-btn-suite1b"} className={"fp-btn"} onClick={myFunction}>Suite 1 B</button>
+          <button id={"fp-btn-suite1cd"} className={"fp-btn"} onClick={myFunction}>Suite 1 C-D</button>
+          <button id={"fp-btn-suite1dd"} className={"fp-btn"} onClick={myFunction}>Suite 1 D-D</button>
+          <button id={"fp-btn-suite2a"} className={"fp-btn"} onClick={myFunction}>Suite 2 A</button>
+          <button id={"fp-btn-suite2e"} className={"fp-btn"} onClick={myFunction}>Suite E</button>
+          <button id={"fp-btn-suite2f"} className={"fp-btn"} onClick={myFunction}>Suite F</button>
+        </div>
+        <div id={"floor-plan-image-box"}>
+          <div id={"studio"} className="floor-plan">
+            <Img fluid={data.floorPlanStudioSA.childImageSharp.fluid}/>
+          </div>
+          <div id={"suite1ad"} className={"floor-plan"}>
+            <Img fluid={data.floorPlanSuite1AD.childImageSharp.fluid}/>
+          </div>
+          <div id={"suite1a"} className={"floor-plan"}>
+            <Img fluid={data.floorPlanSuite1A.childImageSharp.fluid}/>
+          </div>
+          <div id={"suite1bd"} className={"floor-plan"}>
+            <Img fluid={data.floorPlanSuite1BD.childImageSharp.fluid}/>
+          </div>
+          <div id={"suite1b"} className={"floor-plan"}>
+            <Img fluid={data.floorPlanSuite1B.childImageSharp.fluid}/>
+          </div>
+          <div id={"suite1cd"} className={"floor-plan"}>
+            <Img fluid={data.floorPlanSuite1CD.childImageSharp.fluid}/>
+          </div>
+          <div id={"suite1dd"} className={"floor-plan"}>
+            <Img fluid={data.floorPlanSuite1DD.childImageSharp.fluid}/>
+          </div>
+          <div id={"suite2a"} className={"floor-plan"}>
+            <Img fluid={data.floorPlanSuite2A.childImageSharp.fluid}/>
+          </div>
+          <div id={"suite2e"} className={"floor-plan"}>
+            <Img fluid={data.floorPlanSuite2E.childImageSharp.fluid}/>
+          </div>
+          <div id={"suite2f"} className={"floor-plan"}>
+            <Img fluid={data.floorPlanSuite2F.childImageSharp.fluid}/>
+          </div>
+          <button className={"call-to-action-btn"}>Reserve Floor Plan</button>
+        </div>
       </div>
-      <div id={"floor-plan-image-box"}>
-        <div id={"studio"} className="floor-plan">
-          <Img fluid={data.floorPlanStudioSA.childImageSharp.fluid}/>
-        </div>
-        <div id={"suite1ad"} className={"floor-plan"}>
-          <Img fluid={data.floorPlanSuite1AD.childImageSharp.fluid}/>
-        </div>
-        <div id={"suite1a"} className={"floor-plan"}>
-          <Img fluid={data.floorPlanSuite1A.childImageSharp.fluid}/>
-        </div>
-        <div id={"suite1bd"} className={"floor-plan"}>
-          <Img fluid={data.floorPlanSuite1BD.childImageSharp.fluid}/>
-        </div>
-        <div id={"suite1b"} className={"floor-plan"}>
-          <Img fluid={data.floorPlanSuite1B.childImageSharp.fluid}/>
-        </div>
-        <div id={"suite1cd"} className={"floor-plan"}>
-          <Img fluid={data.floorPlanSuite1CD.childImageSharp.fluid}/>
-        </div>
-        <div id={"suite1dd"} className={"floor-plan"}>
-          <Img fluid={data.floorPlanSuite1DD.childImageSharp.fluid}/>
-        </div>
-        <div id={"suite2a"} className={"floor-plan"}>
-          <Img fluid={data.floorPlanSuite2A.childImageSharp.fluid}/>
-        </div>
-        <div id={"suite2e"} className={"floor-plan"}>
-          <Img fluid={data.floorPlanSuite2E.childImageSharp.fluid}/>
-        </div>
-        <div id={"suite2f"} className={"floor-plan"}>
-          <Img fluid={data.floorPlanSuite2F.childImageSharp.fluid}/>
-        </div>
-        <button className={'call-to-action-btn'}>Reserve Floor Plan</button>
-      </div>
-    </div>
+    </section>
   )}
   />
 )

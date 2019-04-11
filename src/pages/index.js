@@ -10,18 +10,14 @@ class IndexPage extends Component {
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
-        <section id={"banner"}>
-          <HeroBanner/>
-        </section>
-        <section id={"gallery-section"}>
-          <FloorPlans/>
-        </section>
+        <HeroBanner/>
+        <FloorPlans/>
       </Layout>
     )
   }
 }
 
-IndexPage.propTypes = {  }
+IndexPage.propTypes = {}
 
 export default IndexPage
 
