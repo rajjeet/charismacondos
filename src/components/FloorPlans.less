@@ -68,18 +68,18 @@
     width: 70%;
 
     @media (max-width: @mobileBreakpoint) {
-      width: 100%;
       margin: 1em 0 0 0;
+      width: 100%
     }
 
     .floor-plan {
       display: none;
       margin: 1em auto;
-      width: 60%;
+      width: 90%;
 
 
       @media (max-width: @mobileBreakpoint) {
-        width: 90%;
+        width: 80%;
       }
 
     }
@@ -89,9 +89,18 @@
     }
 
     .gatsby-image-wrapper {
-      min-width: 100%;
-      min-height: 400px;
-      max-height: 550px;
+      min-width: 70%;
+      min-height: 600px;
+
+      @media (max-width: @largeScreenBreakpoint) {
+        min-height: 500px;
+        min-width: 100%;
+      }
+
+      @media (max-width: @mobileBreakpoint) {
+        min-height: 400px;
+        min-width: 100%;
+      }
     }
   }
 }

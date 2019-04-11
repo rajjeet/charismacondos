@@ -99,26 +99,37 @@ h6 {
 }
 @media (max-width: 660px) {
   #gallery #floor-plan-image-box {
-    width: 100%;
     margin: 1em 0 0 0;
+    width: 100%;
   }
 }
 #gallery #floor-plan-image-box .floor-plan {
   display: none;
   margin: 1em auto;
-  width: 60%;
+  width: 90%;
 }
 @media (max-width: 660px) {
   #gallery #floor-plan-image-box .floor-plan {
-    width: 90%;
+    width: 80%;
   }
 }
 #gallery #floor-plan-image-box .floor-plan:first-of-type {
   display: block;
 }
 #gallery #floor-plan-image-box .gatsby-image-wrapper {
-  min-width: 100%;
-  min-height: 400px;
-  max-height: 550px;
+  min-width: 70%;
+  min-height: 600px;
+}
+@media (max-width: 1023px) {
+  #gallery #floor-plan-image-box .gatsby-image-wrapper {
+    min-height: 500px;
+    min-width: 100%;
+  }
+}
+@media (max-width: 660px) {
+  #gallery #floor-plan-image-box .gatsby-image-wrapper {
+    min-height: 400px;
+    min-width: 100%;
+  }
 }
 /*# sourceMappingURL=FloorPlans.css.map */
