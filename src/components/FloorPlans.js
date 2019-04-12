@@ -5,7 +5,7 @@ import "./FloorPlans.css"
 import { StaticQuery, graphql } from "gatsby"
 
 
-const myFunction = (event) => {
+const handleFloorPlanSelection = (event) => {
   let button = event.target
   let id = button.id.replace("fp-btn-", "")
   let ele = document.getElementById(id)
@@ -19,6 +19,16 @@ const myFunction = (event) => {
   button.style.backgroundColor = "grey"
   button.style.color = "white"
   ele.style.display = "block"
+}
+
+function getFloorPlanButton(unitName, text) {
+  return <button id={`fp-btn-${unitName}`} className={"fp-btn"} onClick={handleFloorPlanSelection}>{text}</button>
+}
+
+function getFloorPlanImage(unitName, image) {
+  return <div id={unitName} className="floor-plan">
+    <Img fluid={image.childImageSharp.fluid}/>
+  </div>
 }
 
 export const FloorPlans = ({ data }) => (
@@ -98,53 +108,33 @@ export const FloorPlans = ({ data }) => (
 
   }
 `} render={data => (
-    <section id={"gallery-section"}>
-      <div id={"gallery"}>
+    <section id={"floor-plans-section"}>
+      <div id={"floor-plans"}>
         <h1>Floor Plans</h1>
         <p>Find the perfect layout that suits your lifestyle</p>
         <div id={"floor-plan-buttons"}>
-          <button id={"fp-btn-studio"} className={"fp-btn"} onClick={myFunction}>Studio SA</button>
-          <button id={"fp-btn-suite1ad"} className={"fp-btn"} onClick={myFunction}>Suite 1 A-D</button>
-          <button id={"fp-btn-suite1a"} className={"fp-btn"} onClick={myFunction}>Suite 1 A</button>
-          <button id={"fp-btn-suite1bd"} className={"fp-btn"} onClick={myFunction}>Suite 1 B-D</button>
-          <button id={"fp-btn-suite1b"} className={"fp-btn"} onClick={myFunction}>Suite 1 B</button>
-          <button id={"fp-btn-suite1cd"} className={"fp-btn"} onClick={myFunction}>Suite 1 C-D</button>
-          <button id={"fp-btn-suite1dd"} className={"fp-btn"} onClick={myFunction}>Suite 1 D-D</button>
-          <button id={"fp-btn-suite2a"} className={"fp-btn"} onClick={myFunction}>Suite 2 A</button>
-          <button id={"fp-btn-suite2e"} className={"fp-btn"} onClick={myFunction}>Suite E</button>
-          <button id={"fp-btn-suite2f"} className={"fp-btn"} onClick={myFunction}>Suite F</button>
+          {getFloorPlanButton("studio", "Studio SA")}
+          {getFloorPlanButton("suite1ad", "Suite 1 A-D")}
+          {getFloorPlanButton("suite1a", "Suite 1 A")}
+          {getFloorPlanButton("suite1bd", "Suite 1 B-D")}
+          {getFloorPlanButton("suite1b", "Suite 1 B")}
+          {getFloorPlanButton("suite1cd", "Suite 1 C-D")}
+          {getFloorPlanButton("suite1dd", "Suite 1 D-D")}
+          {getFloorPlanButton("suite2a", "Suite 2 A")}
+          {getFloorPlanButton("suite2e", "Suite E")}
+          {getFloorPlanButton("suite2f", "Suite F")}
         </div>
         <div id={"floor-plan-image-box"}>
-          <div id={"studio"} className="floor-plan">
-            <Img fluid={data.floorPlanStudioSA.childImageSharp.fluid}/>
-          </div>
-          <div id={"suite1ad"} className={"floor-plan"}>
-            <Img fluid={data.floorPlanSuite1AD.childImageSharp.fluid}/>
-          </div>
-          <div id={"suite1a"} className={"floor-plan"}>
-            <Img fluid={data.floorPlanSuite1A.childImageSharp.fluid}/>
-          </div>
-          <div id={"suite1bd"} className={"floor-plan"}>
-            <Img fluid={data.floorPlanSuite1BD.childImageSharp.fluid}/>
-          </div>
-          <div id={"suite1b"} className={"floor-plan"}>
-            <Img fluid={data.floorPlanSuite1B.childImageSharp.fluid}/>
-          </div>
-          <div id={"suite1cd"} className={"floor-plan"}>
-            <Img fluid={data.floorPlanSuite1CD.childImageSharp.fluid}/>
-          </div>
-          <div id={"suite1dd"} className={"floor-plan"}>
-            <Img fluid={data.floorPlanSuite1DD.childImageSharp.fluid}/>
-          </div>
-          <div id={"suite2a"} className={"floor-plan"}>
-            <Img fluid={data.floorPlanSuite2A.childImageSharp.fluid}/>
-          </div>
-          <div id={"suite2e"} className={"floor-plan"}>
-            <Img fluid={data.floorPlanSuite2E.childImageSharp.fluid}/>
-          </div>
-          <div id={"suite2f"} className={"floor-plan"}>
-            <Img fluid={data.floorPlanSuite2F.childImageSharp.fluid}/>
-          </div>
+          {getFloorPlanImage("studio", data.floorPlanStudioSA)}
+          {getFloorPlanImage("suite1ad", data.floorPlanSuite1AD)}
+          {getFloorPlanImage("suite1a", data.floorPlanSuite1A)}
+          {getFloorPlanImage("suite1bd", data.floorPlanSuite1BD)}
+          {getFloorPlanImage("suite1b", data.floorPlanSuite1B)}
+          {getFloorPlanImage("suite1cd", data.floorPlanSuite1CD)}
+          {getFloorPlanImage("suite1dd", data.floorPlanSuite1DD)}
+          {getFloorPlanImage("suite2a", data.floorPlanSuite2A)}
+          {getFloorPlanImage("suite2e", data.floorPlanSuite2E)}
+          {getFloorPlanImage("suite2f", data.floorPlanSuite2F)}
           <button className={"call-to-action-btn"}>Reserve Floor Plan</button>
         </div>
       </div>

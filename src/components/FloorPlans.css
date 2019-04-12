@@ -46,30 +46,30 @@ p,
 span {
   margin-top: .2em;
 }
-#gallery {
+#floor-plans {
   width: 80%;
   margin: 0 auto;
   text-align: center;
 }
 @media (max-width: 660px) {
-  #gallery {
+  #floor-plans {
     width: 100%;
   }
 }
-#gallery div {
+#floor-plans div {
   display: inline-block;
 }
-#gallery #floor-plan-buttons {
+#floor-plans #floor-plan-buttons {
   vertical-align: top;
   margin: 0 auto;
   width: 30%;
 }
 @media (max-width: 660px) {
-  #gallery #floor-plan-buttons {
+  #floor-plans #floor-plan-buttons {
     width: 100%;
   }
 }
-#gallery #floor-plan-buttons button {
+#floor-plans #floor-plan-buttons button {
   width: 80%;
   display: block;
   padding: .4em 0 .4em 0;
@@ -82,56 +82,56 @@ span {
   outline: none;
 }
 @media (max-width: 660px) {
-  #gallery #floor-plan-buttons button {
+  #floor-plans #floor-plan-buttons button {
     display: inline;
     width: 40%;
     margin: .1em .1em;
   }
 }
-#gallery #floor-plan-buttons button:hover {
+#floor-plans #floor-plan-buttons button:hover {
   background-color: darkred !important;
   color: white !important;
   cursor: pointer;
 }
-#gallery #floor-plan-buttons button:first-of-type {
+#floor-plans #floor-plan-buttons button:first-of-type {
   background-color: grey;
   color: white;
 }
-#gallery #floor-plan-image-box {
+#floor-plans #floor-plan-image-box {
   margin: 0 auto;
   width: 70%;
 }
 @media (max-width: 660px) {
-  #gallery #floor-plan-image-box {
+  #floor-plans #floor-plan-image-box {
     margin: 1em 0 0 0;
     width: 100%;
   }
 }
-#gallery #floor-plan-image-box .floor-plan {
+#floor-plans #floor-plan-image-box .floor-plan {
   display: none;
   margin: 1em auto;
   width: 90%;
 }
 @media (max-width: 660px) {
-  #gallery #floor-plan-image-box .floor-plan {
+  #floor-plans #floor-plan-image-box .floor-plan {
     width: 80%;
   }
 }
-#gallery #floor-plan-image-box .floor-plan:first-of-type {
+#floor-plans #floor-plan-image-box .floor-plan:first-of-type {
   display: block;
 }
-#gallery #floor-plan-image-box .gatsby-image-wrapper {
+#floor-plans #floor-plan-image-box .gatsby-image-wrapper {
   min-width: 70%;
   min-height: 600px;
 }
 @media (max-width: 1023px) {
-  #gallery #floor-plan-image-box .gatsby-image-wrapper {
+  #floor-plans #floor-plan-image-box .gatsby-image-wrapper {
     min-height: 500px;
     min-width: 100%;
   }
 }
 @media (max-width: 660px) {
-  #gallery #floor-plan-image-box .gatsby-image-wrapper {
+  #floor-plans #floor-plan-image-box .gatsby-image-wrapper {
     min-height: 400px;
     min-width: 100%;
   }
