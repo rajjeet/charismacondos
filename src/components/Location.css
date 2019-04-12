@@ -106,4 +106,40 @@ span {
     display: block;
   }
 }
+#location #amenities {
+  margin: .3em auto;
+}
+#location #amenities .fa-layers {
+  min-height: 50px;
+  width: 70%;
+  text-align: left;
+  display: inline-block;
+  margin: 0 auto;
+}
+@media (max-width: 660px) {
+  #location #amenities .fa-layers {
+    margin: .2em auto;
+    width: 90%;
+  }
+}
+#location #amenities .fa-layers svg:first-of-type {
+  margin: 0;
+}
+#location #amenities .fa-layers svg:last-of-type {
+  top: 8px;
+  left: 5px;
+  margin: 0;
+}
+#location #amenities .fa-layers span {
+  position: relative;
+  top: 15px;
+  left: 55px;
+  max-width: 100%;
+}
+@media (max-width: 660px) {
+  #location #amenities .fa-layers span {
+    top: 10px;
+    font-size: .8em;
+  }
+}
 /*# sourceMappingURL=Location.css.map */

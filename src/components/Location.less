@@ -17,6 +17,7 @@
       margin: 0 auto;
       width: 15%;
 
+
       span:first-of-type {
         margin: 0 auto;
         font-size: 4em;
@@ -64,5 +65,38 @@
 
   }
 
+  #amenities {
+    margin: .3em auto;
+    .fa-layers {
+      min-height: 50px;
+      width: 70%;
+      text-align: left;
+      display: inline-block;
+      margin: 0 auto;
+      @media (max-width: @mobileBreakpoint){
+        margin: .2em auto;
+        width: 90%;
+      }
+      svg:first-of-type {
+        margin: 0;
+      }
+      svg:last-of-type {
+        top: 8px;
+        left: 5px;
+        margin: 0;
+      }
+      span {
+        position: relative;
+        top: 15px;
+        left: 55px;
+        max-width: 100%;
 
+        @media (max-width: @mobileBreakpoint){
+          top: 10px;
+          font-size: .8em;
+        }
+      }
+
+    }
+  }
 }
