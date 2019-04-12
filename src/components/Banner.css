@@ -6,7 +6,7 @@
 }
 #banner-section h6 {
   color: white;
-  margin: .2em auto;
+  margin: .1em auto;
 }
 #banner-section .content {
   padding: 80px 0;
@@ -15,6 +15,6 @@
 }
 #banner-section .content p {
   width: 80%;
-  margin: 0 auto;
+  margin: .4em auto;
 }
 /*# sourceMappingURL=Banner.css.map */
