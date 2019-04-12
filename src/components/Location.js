@@ -11,6 +11,14 @@ function getAmenity(frontIcon, text) {
   </div>
 }
 
+function getKpi(digit, timescale, caption) {
+  return <div className={"kpi-card"}>
+    <span>{digit}</span>
+    <span>{timescale}</span>
+    <div>{caption}</div>
+  </div>
+}
+
 export const Location = () => (
   <section id={"location"}>
     <h1>Location</h1>
@@ -18,37 +26,14 @@ export const Location = () => (
       the epicentre of connectivity, convenience and innovation, and only steps away from the subway. </p>
 
     <div id={"location-kpi"}>
-      <div className={"kpi-card"}>
-        <span>2</span>
-        <span>min</span>
-        <div>Subway</div>
-      </div>
-      <div className={"kpi-card"}>
-        <span>4</span>
-        <span>min</span>
-        <div>Shopping</div>
-      </div>
-      <div className={"kpi-card"}>
-        <span>2</span>
-        <span>min</span>
-        <div>Highway</div>
-      </div>
-      <div className={"kpi-card"}>
-        <span>2</span>
-        <span>min</span>
-        <div>Entertainment</div>
-      </div>
-      <div className={"kpi-card"}>
-        <span>2</span>
-        <span>min</span>
-        <div>Recreation</div>
-      </div>
-      <div className={"kpi-card"}>
-        <span>2</span>
-        <span>min</span>
-        <div>Dining</div>
-      </div>
+      {getKpi(2, 'min', 'Subway')}
+      {getKpi(3, 'min', 'Shopping')}
+      {getKpi(4, 'min', 'Highway')}
+      {getKpi(5, 'min', 'Entertainment')}
+      {getKpi(6, 'min', 'Recreation')}
+      {getKpi(7, 'min', 'Dining')}
     </div>
+
     <iframe title={"googlemaps"} height="450"
             src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJvdrsxLkvK4gRg5m2IsjTerw&key=AIzaSyBwH66e9iE5lT856EiEJne_wcgBjJkh2uA"
             allowFullScreen/>
