@@ -117,7 +117,7 @@ span {
 }
 #location #amenities .fa-layers {
   min-height: 50px;
-  width: 70%;
+  width: 40%;
   text-align: left;
   display: inline-block;
   margin: 0 auto;
@@ -126,6 +126,12 @@ span {
   #location #amenities .fa-layers {
     margin: .2em auto;
     width: 90%;
+  }
+}
+@media (max-width: 1023px) {
+  #location #amenities .fa-layers {
+    margin: .2em auto;
+    width: 70%;
   }
 }
 #location #amenities .fa-layers svg:first-of-type {
@@ -140,13 +146,14 @@ span {
   position: relative;
   top: 15px;
   left: 55px;
+  width: 80%;
+  margin-right: 0;
 }
 @media (max-width: 660px) {
   #location #amenities .fa-layers .amenity-text {
     width: 80%;
     top: 10px;
     font-size: .8em;
-    margin-right: 0;
     display: inline-block;
   }
 }
