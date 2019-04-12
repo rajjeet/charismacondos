@@ -4,9 +4,12 @@
   width: 80%;
   margin: 0 auto;
   text-align: center;
-
+  @media (max-width: @mobileBreakpoint) {
+    width: 100%;
+  }
   iframe {
-    width: 100%
+    width: 95%;
+    margin: 0 auto;
   }
 
   #location-kpi {
@@ -85,15 +88,17 @@
         left: 5px;
         margin: 0;
       }
-      span {
+      .amenity-text {
         position: relative;
         top: 15px;
         left: 55px;
-        max-width: 100%;
 
         @media (max-width: @mobileBreakpoint){
+          width: 80%;
           top: 10px;
           font-size: .8em;
+          margin-right: 0;
+          display: inline-block;
         }
       }
 

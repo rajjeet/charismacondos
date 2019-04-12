@@ -51,8 +51,14 @@ span {
   margin: 0 auto;
   text-align: center;
 }
+@media (max-width: 660px) {
+  #location {
+    width: 100%;
+  }
+}
 #location iframe {
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
 }
 #location #location-kpi {
   margin-bottom: 1em;
@@ -130,16 +136,18 @@ span {
   left: 5px;
   margin: 0;
 }
-#location #amenities .fa-layers span {
+#location #amenities .fa-layers .amenity-text {
   position: relative;
   top: 15px;
   left: 55px;
-  max-width: 100%;
 }
 @media (max-width: 660px) {
-  #location #amenities .fa-layers span {
+  #location #amenities .fa-layers .amenity-text {
+    width: 80%;
     top: 10px;
     font-size: .8em;
+    margin-right: 0;
+    display: inline-block;
   }
 }
 /*# sourceMappingURL=Location.css.map */

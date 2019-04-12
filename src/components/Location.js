@@ -50,32 +50,32 @@ export const Location = () => (
       <div className="fa-layers">
         <FontAwesomeIcon className={"amenitiesBackIcon"} icon={faSquare} size={"3x"} color={"darkred"}/>
         <FontAwesomeIcon className={"amenitiesFrontIcon"} icon={faFilm} size={"2x"} color={"white"}/>
-        <span>Theatre Room</span>
+        <div className={'amenity-text'}>Theatre Room</div>
       </div>
       <div className="fa-layers">
         <FontAwesomeIcon className={"amenitiesBackIcon"} icon={faSquare} size={"3x"} color={"darkred"}/>
         <FontAwesomeIcon className={"amenitiesFrontIcon"} icon={faGlassMartiniAlt} size={"2x"} color={"white"}/>
-        <span>Party Room with Bar and Kitchen</span>
+        <div className={'amenity-text'}>Party Room with Bar and Kitchen</div>
       </div>
       <div className="fa-layers">
         <FontAwesomeIcon className={"amenitiesBackIcon"} icon={faSquare} size={"3x"} color={"darkred"}/>
         <FontAwesomeIcon className={"amenitiesFrontIcon"} icon={faCloudSun} size={"2x"} color={"white"}/>
-        <span>Outdoor Terrace with Lounge, Fire Pit and BBQs</span>
+        <div className={'amenity-text'}>Outdoor Terrace with Lounge, Fire Pit and BBQs</div>
       </div>
       <div className="fa-layers">
         <FontAwesomeIcon className={"amenitiesBackIcon"} icon={faSquare} size={"3x"} color={"darkred"}/>
         <FontAwesomeIcon className={"amenitiesFrontIcon"} icon={faRunning} size={"2x"} color={"white"}/>
-        <span>Virtual & Yoga/Aerobics Studios</span>
+        <div className={'amenity-text'}>Virtual & Yoga/Aerobics Studios</div>
       </div>
       <div className="fa-layers">
         <FontAwesomeIcon className={"amenitiesBackIcon"} icon={faSquare} size={"3x"} color={"darkred"}/>
         <FontAwesomeIcon className={"amenitiesFrontIcon"} icon={faBaby} size={"2x"} color={"white"}/>
-        <span>Kids Play Room and Outdoor Play Area</span>
+        <div className={'amenity-text'}>Kids Play Room and Outdoor Play Area</div>
       </div>
       <div className="fa-layers">
         <FontAwesomeIcon className={"amenitiesBackIcon"} icon={faSquare} size={"3x"} color={"darkred"}/>
         <FontAwesomeIcon className={"amenitiesFrontIcon"} icon={faDumbbell} size={"2x"} color={"white"}/>
-        <span>Fitness Centre</span>
+        <div className={'amenity-text'}>Fitness Centre</div>
       </div>
     </div>
 
