@@ -112,49 +112,4 @@ span {
     display: block;
   }
 }
-#location #amenities {
-  margin: .3em auto;
-}
-#location #amenities .fa-layers {
-  min-height: 50px;
-  width: 40%;
-  text-align: left;
-  display: inline-block;
-  margin: 0 auto;
-}
-@media (max-width: 660px) {
-  #location #amenities .fa-layers {
-    margin: .2em auto;
-    width: 90%;
-  }
-}
-@media (max-width: 1023px) {
-  #location #amenities .fa-layers {
-    margin: .2em auto;
-    width: 70%;
-  }
-}
-#location #amenities .fa-layers svg:first-of-type {
-  margin: 0;
-}
-#location #amenities .fa-layers svg:last-of-type {
-  top: 8px;
-  left: 5px;
-  margin: 0;
-}
-#location #amenities .fa-layers .amenity-text {
-  position: relative;
-  top: 15px;
-  left: 55px;
-  width: 80%;
-  margin-right: 0;
-}
-@media (max-width: 660px) {
-  #location #amenities .fa-layers .amenity-text {
-    width: 80%;
-    top: 10px;
-    font-size: .8em;
-    display: inline-block;
-  }
-}
 /*# sourceMappingURL=Location.css.map */

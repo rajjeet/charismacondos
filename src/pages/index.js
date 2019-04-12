@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import { FloorPlans } from "../components/FloorPlans"
 import { HeroBanner } from "../components/HeroBanner"
 import { Location } from "../components/Location"
+import { Amenities } from "../components/Amenities"
 
 class IndexPage extends Component {
   render() {
@@ -13,6 +14,7 @@ class IndexPage extends Component {
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
         <HeroBanner/>
         <Location/>
+        <Amenities/>
         <FloorPlans/>
       </Layout>
     )
