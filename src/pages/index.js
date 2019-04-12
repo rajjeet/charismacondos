@@ -6,6 +6,7 @@ import { FloorPlans } from "../components/FloorPlans"
 import { HeroBanner } from "../components/HeroBanner"
 import { Location } from "../components/Location"
 import { Amenities } from "../components/Amenities"
+import { Banner } from "../components/Banner"
 
 class IndexPage extends Component {
   render() {
@@ -15,6 +16,7 @@ class IndexPage extends Component {
         <HeroBanner/>
         <Location/>
         <Amenities/>
+        <Banner/>
         <FloorPlans/>
       </Layout>
     )

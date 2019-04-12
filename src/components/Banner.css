@@ -1,0 +1,20 @@
+#banner-section {
+  background-color: #444444;
+  color: white;
+  margin: 50px auto;
+  text-align: center;
+}
+#banner-section h6 {
+  color: white;
+  margin: .2em auto;
+}
+#banner-section .content {
+  padding: 80px 0;
+  margin: 0 auto;
+  width: 80%;
+}
+#banner-section .content p {
+  width: 80%;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=Banner.css.map */
