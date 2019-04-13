@@ -2,9 +2,16 @@
   width: 100%;
   background: white;
   z-index: 100;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 0 5px;
+
   #main-logo {
     display: inline-block;
     width: 100px;
+    max-height: 32px;
   }
 
   #header-links {
@@ -13,8 +20,9 @@
     float: right;
     margin-right: 1em;
     text-align: right;
+    margin-top: 3px;
     a {
-      padding: 6px 8px;
+      padding: 6px 6px;
       margin: 3px 3px;
       font-size: .8em;
       display: inline-block;
@@ -33,4 +41,6 @@
 #page-header.sticky {
   position: fixed;
   top: 0;
+  background-color: #eeeeee;
+
 }

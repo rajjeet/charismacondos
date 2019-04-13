@@ -2,11 +2,13 @@
 @primaryBtnColor:darkred;
 @primary: 10px;
 @buttonBorderRadius: 10px;
-@mobileBreakpoint: 660px;
-@largeScreenBreakpoint: 1023px;
+@mobileBreakpoint: 425px;
+@tabletBreakpoint: 660px;
+@computerBreakpoint: 1023px;
 
 html {
   scroll-behavior: smooth;
+
 }
 
 main {
@@ -24,6 +26,8 @@ body {
   font-family: @fontFamily;
   background: snow;
   color: #444444;
+  padding: 0;
+  margin: 0;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -42,7 +46,7 @@ h1,h2,h3,h4,h5,h6 {
   padding: .4em 2em;
   border-radius: 10px;
   font-family: @fontFamily;
-  @media (max-width: @mobileBreakpoint) {
+  @media (max-width: @tabletBreakpoint) {
     padding: .3em 0.5em;
     font-size: 1.3em;
   }
