@@ -1,10 +1,33 @@
-header div {
-  margin: 0 auto;
-  max-width: 960px;
+#page-header {
+  width: 100%;
+  background: white;
 }
-header #home-link {
+#page-header #main-logo {
+  display: inline-block;
+  width: 100px;
+}
+#page-header .links {
+  display: inline-block;
+  width: 70%;
+  float: right;
+  margin-right: 1em;
+  text-align: right;
+}
+#page-header .links a {
+  padding: 6px 8px;
+  margin: 3px 3px;
+  font-size: .8em;
+  display: inline-block;
+  border-radius: 5px;
   text-decoration: none;
-  color: darkred;
-  text-shadow: 1px 1px 4px #ccc;
+  color: dimgrey;
+}
+#page-header .links a:hover {
+  background-color: darkred;
+  color: white;
+}
+#page-header.sticky {
+  position: fixed;
+  top: 0;
 }
 /*# sourceMappingURL=Header.css.map */

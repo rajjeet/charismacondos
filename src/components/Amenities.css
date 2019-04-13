@@ -1,5 +1,12 @@
-main {
-  margin: 0 auto;
+html {
+  scroll-behavior: smooth;
+}
+.section-title {
+  position: relative;
+}
+.section-title span {
+  position: absolute;
+  top: -60px;
 }
 body {
   font-family: Ubuntu, Geneva, sans-serif;
@@ -46,17 +53,17 @@ p,
 span {
   margin-top: .2em;
 }
-#amenities {
+#amenities-container {
   margin: .2em auto;
   width: 80%;
   text-align: center;
 }
 @media (max-width: 660px) {
-  #amenities {
+  #amenities-container {
     width: 100%;
   }
 }
-#amenities .fa-layers {
+#amenities-container .fa-layers {
   min-height: 50px;
   width: 40%;
   text-align: left;
@@ -64,26 +71,26 @@ span {
   margin: 0 auto;
 }
 @media (max-width: 660px) {
-  #amenities .fa-layers {
+  #amenities-container .fa-layers {
     margin: .2em auto;
     width: 90%;
   }
 }
 @media (max-width: 1023px) {
-  #amenities .fa-layers {
+  #amenities-container .fa-layers {
     margin: .2em auto;
     width: 70%;
   }
 }
-#amenities .fa-layers svg:first-of-type {
+#amenities-container .fa-layers svg:first-of-type {
   margin: 0;
 }
-#amenities .fa-layers svg:last-of-type {
+#amenities-container .fa-layers svg:last-of-type {
   top: 8px;
   left: 5px;
   margin: 0;
 }
-#amenities .fa-layers .amenity-text {
+#amenities-container .fa-layers .amenity-text {
   position: relative;
   top: 15px;
   left: 55px;
@@ -91,7 +98,7 @@ span {
   margin-right: 0;
 }
 @media (max-width: 660px) {
-  #amenities .fa-layers .amenity-text {
+  #amenities-container .fa-layers .amenity-text {
     width: 80%;
     top: 10px;
     font-size: .8em;

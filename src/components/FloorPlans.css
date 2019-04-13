@@ -1,5 +1,12 @@
-main {
-  margin: 0 auto;
+html {
+  scroll-behavior: smooth;
+}
+.section-title {
+  position: relative;
+}
+.section-title span {
+  position: absolute;
+  top: -60px;
 }
 body {
   font-family: Ubuntu, Geneva, sans-serif;
@@ -46,30 +53,30 @@ p,
 span {
   margin-top: .2em;
 }
-#floor-plans {
+#floor-plans-container {
   width: 80%;
   margin: 0 auto;
   text-align: center;
 }
 @media (max-width: 660px) {
-  #floor-plans {
+  #floor-plans-container {
     width: 100%;
   }
 }
-#floor-plans div {
+#floor-plans-container div {
   display: inline-block;
 }
-#floor-plans #floor-plan-buttons {
+#floor-plans-container #floor-plan-buttons {
   vertical-align: top;
   margin: 0 auto;
   width: 30%;
 }
 @media (max-width: 660px) {
-  #floor-plans #floor-plan-buttons {
+  #floor-plans-container #floor-plan-buttons {
     width: 100%;
   }
 }
-#floor-plans #floor-plan-buttons button {
+#floor-plans-container #floor-plan-buttons button {
   width: 80%;
   display: block;
   padding: .4em 0 .4em 0;
@@ -82,56 +89,56 @@ span {
   outline: none;
 }
 @media (max-width: 660px) {
-  #floor-plans #floor-plan-buttons button {
+  #floor-plans-container #floor-plan-buttons button {
     display: inline;
     width: 40%;
     margin: .1em .1em;
   }
 }
-#floor-plans #floor-plan-buttons button:hover {
+#floor-plans-container #floor-plan-buttons button:hover {
   background-color: darkred !important;
   color: white !important;
   cursor: pointer;
 }
-#floor-plans #floor-plan-buttons button:first-of-type {
+#floor-plans-container #floor-plan-buttons button:first-of-type {
   background-color: grey;
   color: white;
 }
-#floor-plans #floor-plan-image-box {
+#floor-plans-container #floor-plan-image-box {
   margin: 0 auto;
   width: 70%;
 }
 @media (max-width: 660px) {
-  #floor-plans #floor-plan-image-box {
+  #floor-plans-container #floor-plan-image-box {
     margin: 1em 0 0 0;
     width: 100%;
   }
 }
-#floor-plans #floor-plan-image-box .floor-plan {
+#floor-plans-container #floor-plan-image-box .floor-plan {
   display: none;
   margin: 1em auto;
   width: 90%;
 }
 @media (max-width: 660px) {
-  #floor-plans #floor-plan-image-box .floor-plan {
+  #floor-plans-container #floor-plan-image-box .floor-plan {
     width: 80%;
   }
 }
-#floor-plans #floor-plan-image-box .floor-plan:first-of-type {
+#floor-plans-container #floor-plan-image-box .floor-plan:first-of-type {
   display: block;
 }
-#floor-plans #floor-plan-image-box .gatsby-image-wrapper {
+#floor-plans-container #floor-plan-image-box .gatsby-image-wrapper {
   min-width: 70%;
   min-height: 600px;
 }
 @media (max-width: 1023px) {
-  #floor-plans #floor-plan-image-box .gatsby-image-wrapper {
+  #floor-plans-container #floor-plan-image-box .gatsby-image-wrapper {
     min-height: 500px;
     min-width: 100%;
   }
 }
 @media (max-width: 660px) {
-  #floor-plans #floor-plan-image-box .gatsby-image-wrapper {
+  #floor-plans-container #floor-plan-image-box .gatsby-image-wrapper {
     min-height: 400px;
     min-width: 100%;
   }

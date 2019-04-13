@@ -1,19 +1,19 @@
 @import 'Layout.css';
-#photo-gallery {
+#photo-gallery-container {
   text-align: center;
   max-width: 80%;
   margin: auto;
 }
-#photo-gallery .photo-slide:first-of-type {
+#photo-gallery-container .photo-slide:first-of-type {
   display: block;
 }
-#photo-gallery .photo-slide {
+#photo-gallery-container .photo-slide {
   display: none;
 }
-#photo-gallery .photo img {
+#photo-gallery-container .photo img {
   overflow-y: hidden;
 }
-#photo-gallery #photo-container {
+#photo-gallery-container #photo-container {
   height: 50vw;
   width: 80vw;
   max-width: 800px;
@@ -23,8 +23,8 @@
   margin: 0 auto;
   border-radius: 10px;
 }
-#photo-gallery .prev-slide,
-#photo-gallery .next-slide {
+#photo-gallery-container .prev-slide,
+#photo-gallery-container .next-slide {
   cursor: pointer;
   position: absolute;
   top: 22px;
@@ -42,21 +42,21 @@
   outline: none;
   text-shadow: #cccccc 0 0 5px;
 }
-#photo-gallery .next-slide,
-#photo-gallery .prev-slide {
+#photo-gallery-container .next-slide,
+#photo-gallery-container .prev-slide {
   border-radius: 10px;
 }
-#photo-gallery .next-slide {
+#photo-gallery-container .next-slide {
   right: 0;
 }
-#photo-gallery .prev-slide {
+#photo-gallery-container .prev-slide {
   left: 0;
 }
-#photo-gallery .prev-slide:hover,
-#photo-gallery .next-slide:hover {
+#photo-gallery-container .prev-slide:hover,
+#photo-gallery-container .next-slide:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-#photo-gallery .photo-caption {
+#photo-gallery-container .photo-caption {
   color: dimgrey;
   font-size: 2em;
   padding: 8px 12px;
@@ -64,7 +64,7 @@
   width: 100%;
   text-align: center;
 }
-#photo-gallery .fade {
+#photo-gallery-container .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
   animation-name: fade;

@@ -1,13 +1,35 @@
-header {
-
-  div {
-    margin: 0 auto;
-    max-width: 960px;
+#page-header {
+  width: 100%;
+  background: white;
+  #main-logo {
+    display: inline-block;
+    width: 100px;
   }
 
-  #home-link {
-    text-decoration: none;
-    color: darkred;
-    text-shadow: 1px 1px 4px #ccc;
+  .links {
+    display: inline-block;
+    width: 70%;
+    float: right;
+    margin-right: 1em;
+    text-align: right;
+    a {
+      padding: 6px 8px;
+      margin: 3px 3px;
+      font-size: .8em;
+      display: inline-block;
+      border-radius: 5px;
+      text-decoration: none;
+      color: dimgrey;
+    }
+
+    a:hover{
+      background-color: darkred;
+      color: white;
+    }
   }
+}
+
+#page-header.sticky {
+  position: fixed;
+  top: 0;
 }

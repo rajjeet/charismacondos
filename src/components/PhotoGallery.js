@@ -4,7 +4,7 @@ import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 let slideIndex = 1
-let slideshowTimeout;
+let slideshowTimeout
 jumpToSlide(1)
 
 const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
@@ -26,7 +26,7 @@ export function jumpToSlide(selection, isUserClick = false) {
   if (slides[slideIndex - 1]) slides[slideIndex - 1].style.display = "block"
   if (dots[slideIndex - 1]) dots[slideIndex - 1].className += " active"
   clearTimeout(slideshowTimeout)
-  slideshowTimeout = setTimeout(goToAdjacentSlide, isUserClick ? 15000 : 5000);
+  slideshowTimeout = setTimeout(goToAdjacentSlide, isUserClick ? 15000 : 5000)
 }
 
 function goToAdjacentSlide(number = 1, isUserClick = false) {
@@ -109,13 +109,13 @@ export const PhotoGallery = () => (
     }
    }
     `} render={data => (
-    <section id={"photo-gallery-section"}>
-      <div id={"photo-gallery"}>
-        <h1>Gallery</h1>
+    <div id={"photo-gallery-container"}>
+      <div>
+        <h1 className={"section-title"}>Gallery<span id={"photo-gallery"}/></h1>
         <p>Look at all these amazing pictures</p>
         <div id={"photo-container"}>
           {Object.keys(data).map(photo =>
-            renderPhotoSlide(photo, data[photo].childImageSharp.fluid)
+            renderPhotoSlide(photo, data[photo].childImageSharp.fluid),
           )}
           <button className="prev-slide" onClick={() => goToAdjacentSlide(-1, true)}>&#10094;</button>
           <button className="next-slide" onClick={() => goToAdjacentSlide(1, true)}>&#10095;</button>
@@ -129,7 +129,7 @@ export const PhotoGallery = () => (
           )
         }
       </div>
-    </section>
+    </div>
   )}/>
 )
 

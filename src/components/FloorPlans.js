@@ -108,9 +108,8 @@ export const FloorPlans = ({ data }) => (
 
   }
 `} render={data => (
-    <section id={"floor-plans-section"}>
-      <div id={"floor-plans"}>
-        <h1>Floor Plans</h1>
+      <div id={"floor-plans-container"}>
+        <h1 className={'section-title'}>Floor Plans<span id={'floor-plans'} /></h1>
         <p>Find the perfect layout that suits your lifestyle</p>
         <div id={"floor-plan-buttons"}>
           {getFloorPlanButton("studio", "Studio SA")}
@@ -138,7 +137,6 @@ export const FloorPlans = ({ data }) => (
           <button className={"call-to-action-btn"}>Reserve Floor Plan</button>
         </div>
       </div>
-    </section>
   )}
   />
 )

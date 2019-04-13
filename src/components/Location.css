@@ -1,5 +1,12 @@
-main {
-  margin: 0 auto;
+html {
+  scroll-behavior: smooth;
+}
+.section-title {
+  position: relative;
+}
+.section-title span {
+  position: absolute;
+  top: -60px;
 }
 body {
   font-family: Ubuntu, Geneva, sans-serif;
@@ -46,29 +53,29 @@ p,
 span {
   margin-top: .2em;
 }
-#location {
+#location-container {
   width: 80%;
   margin: 0 auto;
   text-align: center;
 }
 @media (max-width: 660px) {
-  #location {
+  #location-container {
     width: 100%;
   }
 }
-#location iframe {
+#location-container iframe {
   width: 95%;
   margin: 0 auto;
 }
-#location #location-kpi {
+#location-container #location-kpi {
   margin-bottom: 1em;
 }
-#location #location-kpi .kpi-card {
+#location-container #location-kpi .kpi-card {
   display: inline-block;
   margin: 0 auto;
   width: 15%;
 }
-#location #location-kpi .kpi-card span:first-of-type {
+#location-container #location-kpi .kpi-card span:first-of-type {
   margin: 0 auto;
   font-size: 4em;
   padding-bottom: 0;
@@ -76,39 +83,39 @@ span {
   font-weight: bold;
 }
 @media (max-width: 660px) {
-  #location #location-kpi .kpi-card span:first-of-type {
+  #location-container #location-kpi .kpi-card span:first-of-type {
     font-size: 2em;
   }
 }
 @media (max-width: 1023px) {
-  #location #location-kpi .kpi-card span:first-of-type {
+  #location-container #location-kpi .kpi-card span:first-of-type {
     font-size: 2em;
   }
 }
-#location #location-kpi .kpi-card span:first-of-type:hover {
+#location-container #location-kpi .kpi-card span:first-of-type:hover {
   color: darkred;
 }
-#location #location-kpi .kpi-card span {
+#location-container #location-kpi .kpi-card span {
   font-size: 0.8em;
 }
 @media (max-width: 1023px) {
-  #location #location-kpi .kpi-card {
+  #location-container #location-kpi .kpi-card {
     width: 20%;
     margin: 0 5%;
     text-align: left;
   }
-  #location #location-kpi .kpi-card div {
+  #location-container #location-kpi .kpi-card div {
     display: inline;
     padding-left: .5em;
   }
 }
 @media (max-width: 660px) {
-  #location #location-kpi .kpi-card {
+  #location-container #location-kpi .kpi-card {
     width: 40%;
     display: inline-block;
     text-align: center;
   }
-  #location #location-kpi .kpi-card div {
+  #location-container #location-kpi .kpi-card div {
     display: block;
   }
 }

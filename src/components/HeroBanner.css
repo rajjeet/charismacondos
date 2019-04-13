@@ -1,5 +1,12 @@
-main {
-  margin: 0 auto;
+html {
+  scroll-behavior: smooth;
+}
+.section-title {
+  position: relative;
+}
+.section-title span {
+  position: absolute;
+  top: -60px;
 }
 body {
   font-family: Ubuntu, Geneva, sans-serif;
@@ -55,6 +62,10 @@ span {
   width: 100%;
   text-align: center;
   overflow: hidden;
+}
+#hero-banner #main-logo {
+  max-width: 35%;
+  margin: 0 auto;
 }
 #hero-banner #main-card {
   margin-top: 250px;

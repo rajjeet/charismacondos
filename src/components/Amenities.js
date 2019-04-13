@@ -20,16 +20,14 @@ function getAmenity(frontIcon, text) {
 }
 
 export const Amenities = () => (
-  <section id={"amenities-section"}>
-    <div id={"amenities"}>
-      <h1>Amenities</h1>
-      <p>Live with luxury, convenience, and comfort</p>
-      {getAmenity(faFilm, "Theatre Room")}
-      {getAmenity(faGlassMartiniAlt, "Party Room with Bar and Kitchen")}
-      {getAmenity(faCloudSun, "Outdoor Terrace with Lounge, Fire Pit and BBQs")}
-      {getAmenity(faRunning, "Virtual & Yoga/Aerobics Studios")}
-      {getAmenity(faBaby, "Kids Play Room and Outdoor Play Area")}
-      {getAmenity(faDumbbell, "Fitness Centre")}
-    </div>
-  </section>
+  <div id={"amenities-container"}>
+    <h1 className={'section-title'}>Amenities<span id={"amenities"}/></h1>
+    <p>Live with luxury, convenience, and comfort</p>
+    {getAmenity(faFilm, "Theatre Room")}
+    {getAmenity(faGlassMartiniAlt, "Party Room with Bar and Kitchen")}
+    {getAmenity(faCloudSun, "Outdoor Terrace with Lounge, Fire Pit and BBQs")}
+    {getAmenity(faRunning, "Virtual & Yoga/Aerobics Studios")}
+    {getAmenity(faBaby, "Kids Play Room and Outdoor Play Area")}
+    {getAmenity(faDumbbell, "Fitness Centre")}
+  </div>
 )
