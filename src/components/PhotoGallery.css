@@ -11,15 +11,17 @@
   display: none;
 }
 #photo-gallery .photo img {
-  border-radius: 10px;
   overflow-y: hidden;
 }
 #photo-gallery #photo-container {
-  max-height: 400px;
-  max-width: 600px;
+  height: 50vw;
+  width: 80vw;
+  max-width: 800px;
+  max-height: 550px;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
+  border-radius: 10px;
 }
 #photo-gallery .prev-slide,
 #photo-gallery .next-slide {
@@ -86,7 +88,7 @@
 }
 #photo-navigator {
   margin: 0 auto;
-  width: 30%;
+  width: 80%;
   text-align: center;
 }
 #photo-navigator .dot {

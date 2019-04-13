@@ -5,6 +5,8 @@ import Img from "gatsby-image"
 
 let slideIndex = 1
 
+const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
+
 export function jumpToSlide(selection) {
   let index
   const slides = document.getElementsByClassName("photo-slide")
@@ -27,8 +29,8 @@ function goToAdjacentSlide(number) {
   return jumpToSlide(slideIndex += number)
 }
 
-function renderPhotoSlide(image, caption) {
-  return <div className="photo-slide fade">
+function renderPhotoSlide(name, image) {
+  return <div key={name} className="photo-slide fade">
     <div className="photo">
       <Img fluid={image}/>
     </div>
@@ -38,37 +40,90 @@ function renderPhotoSlide(image, caption) {
 export const PhotoGallery = () => (
   <StaticQuery query={graphql`
   query {
-    rendering: file(relativePath: { eq: "rendering.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     neighbourhood: file(relativePath: { eq: "mobilio_neighbourhood.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200) {
+        fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid
         } 
       }
     }
-    
+    rendering2: file(relativePath: { eq: "mobilio_rendered_drawing.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }
+    transit: file(relativePath: { eq: "vmc_transit.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }    
+    transitMap: file(relativePath: { eq: "transit_map.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }
+    eco_info: file(relativePath: { eq: "mobilio_eco_info.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }
+    lobby: file(relativePath: { eq: "mobilio_rendered_drawing3.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    community: file(relativePath: { eq: "vaughan_community_rendering.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }
+    rooftop: file(relativePath: { eq: "rooftop.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }    
+    gym: file(relativePath: { eq: "mobilio_gym.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }
    }
     `} render={data => (
     <section id={"photo-gallery-section"}>
       <div id={"photo-gallery"}>
         <h1>Gallery</h1>
         <p>Look at all these amazing pictures</p>
-        <div id={'photo-container'}>
-          {renderPhotoSlide(data.rendering.childImageSharp.fluid, "Sample caption")}
-          {renderPhotoSlide(data.neighbourhood.childImageSharp.fluid, "Neighbourhood")}
+        <div id={"photo-container"}>
+          {Object.keys(data).map(photo =>
+            renderPhotoSlide(photo, data[photo].childImageSharp.fluid)
+          )}
           <button className="prev-slide" onClick={() => goToAdjacentSlide(-1)}>&#10094;</button>
           <button className="next-slide" onClick={() => goToAdjacentSlide(1)}>&#10095;</button>
         </div>
       </div>
       <div id={"photo-navigator"}>
-        <button className="dot" onClick={() => jumpToSlide(1)}/>
-        <button className="dot" onClick={() => jumpToSlide(2)}/>
+
+        {
+          range(1, Object.keys(data).length, 1).map((element) =>
+            <button key={`d${element}`} className="dot" onClick={() => jumpToSlide(element)}/>,
+          )
+        }
       </div>
     </section>
   )}/>
