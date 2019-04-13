@@ -15,10 +15,9 @@ export const HeroBanner = () => (
       }
      }
    `} render={data => (
-  <section id={"banner-section"}>
     <div id={"hero-banner"}>
       <div id={"main-card"}>
-        <div id={'main-logo'}>
+        <div id={"main-logo"}>
           <GatsbyImage fluid={data.mobilioLogo.childImageSharp.fluid}/>
         </div>
         <div id={"main-heading"}>
@@ -28,12 +27,46 @@ export const HeroBanner = () => (
           Where dreams come true, you will buy this condo now! trust me
         </div>
         <div id={"call-to-action-top"}>
-          <button className="call-to-action-btn">Reserve Your Spot</button>
+          <label htmlFor={"modal-1"} className="call-to-action-btn">Reserve Your Spot</label>
+        </div>
+      </div>
+
+      <input className="modal-state" id="modal-1" type="checkbox"/>
+      <div className="modal">
+        <label className="modal__bg" htmlFor="modal-1"/>
+        <div className="modal__inner">
+          <label className="modal__close" htmlFor="modal-1"/>
+          <h1>Reserve</h1>
+          <form action={(event) => event.preventDefault()}>
+            <div>
+              <label htmlFor={"name"}>Name<span style={{color:'red'}}>*</span></label>
+              <input type={"text"} required id={"fullName"} name={"fullName"}/>
+            </div>
+            <div>
+              <label htmlFor={"email"}>Email<span style={{color:'red'}}>*</span></label>
+              <input type={"email"} required id={"email"} name={"email"}/>
+            </div>
+            <div>
+              <label htmlFor={"phone"}>Phone<span style={{color:'red'}}>*</span></label>
+              <input type={"tel"} required id={"phone"} name={"phone"}/>
+            </div>
+            <div>
+              <label htmlFor={"message"}>Message</label>
+              <textarea style={{width: '100%'}} rows={4} id={"message"} name={"message"}/>
+            </div>
+            <div>
+              <label htmlFor={"message"} className={'container'}>Are you a realtor?
+                <input type={'checkbox'} id={'realtor'} name={'message'} />
+                <span className={'checkmark'} />
+              </label>
+            </div>
+            <button type={'submit'}>Reserve Your Spot</button>
+            <div className={'disclaimer'}>The information you provide is strictly confidential</div>
+          </form>
         </div>
       </div>
     </div>
-  </section>
-  )} />
+  )}/>
 )
 
 

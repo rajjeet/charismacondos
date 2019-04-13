@@ -31,6 +31,7 @@ h6 {
   border: none;
   outline: none;
   text-shadow: 2px 2px 3px dimgrey;
+  margin-top: 2em;
   padding: .4em 2em;
   border-radius: 10px;
   font-family: Ubuntu, Geneva, sans-serif;
@@ -54,6 +55,104 @@ h1 {
 p,
 span {
   margin-top: .2em;
+}
+.modal {
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.9);
+  transition: opacity .25s ease;
+}
+.modal .modal__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+.modal .modal__inner {
+  transition: top .25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 71%;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+}
+@media screen and (max-width: 1023px) {
+  .modal .modal__inner {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 660px) {
+  .modal .modal__inner {
+    width: 90%;
+    box-sizing: border-box;
+    height: 80%;
+  }
+}
+.modal .modal__inner .modal__close {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+.modal .modal__inner .modal__close:after,
+.modal .modal__inner .modal__close:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 1.5em;
+  background: #ccc;
+  display: block;
+  transform: rotate(45deg);
+  left: 50%;
+  margin: -3px 0 0 -1px;
+  top: 0;
+}
+.modal .modal__inner .modal__close:hover:after,
+.modal .modal__inner .modal__close:hover:before {
+  background: #aaa;
+}
+.modal .modal__inner .modal__close:before {
+  transform: rotate(-45deg);
+}
+.modal .modal__inner button {
+  width: 100%;
+  box-shadow: none;
+  padding: 7px 5px;
+  font-size: 2em;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: darkred;
+  color: whitesmoke;
+  font-family: Ubuntu, Geneva, sans-serif;
+}
+.modal-state {
+  display: none;
+}
+.modal-state:checked + .modal {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-state:checked + .modal .modal__inner {
+  top: 0;
 }
 #floor-plans-container {
   width: 80%;
