@@ -48,13 +48,24 @@ span {
 }
 #hero-banner {
   background: url('../images/mobilio_rendered_drawing_edited.jpeg') no-repeat center center scroll;
-  height: 600px;
+  height: 700px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   width: 100%;
   text-align: center;
   overflow: hidden;
+}
+#hero-banner #main-card {
+  margin-top: 250px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 15px 10px;
+  border-radius: 10px;
+}
+@media (max-width: 660px) {
+  #hero-banner #main-card {
+    margin-top: 155px;
+  }
 }
 #hero-banner #main-heading {
   color: dimgrey;
@@ -63,14 +74,34 @@ span {
   vertical-align: bottom;
   text-shadow: 2px 2px 2px whitesmoke;
 }
+@media (max-width: 660px) {
+  #hero-banner #main-heading {
+    font-size: 2em;
+  }
+}
+@media (max-width: 1023px) {
+  #hero-banner #main-heading {
+    font-size: 3em;
+  }
+}
 #hero-banner #supporting-headline {
-  vertical-align: middle;
   color: #444;
   font-size: 1.5em;
   text-shadow: 2px 2px 2px white;
-  height: 2em;
+  margin: 5px auto;
+}
+@media (max-width: 660px) {
+  #hero-banner #supporting-headline {
+    font-size: 1em;
+    margin: 1em auto;
+  }
+}
+@media (max-width: 1023px) {
+  #hero-banner #supporting-headline {
+    font-size: 1.2em;
+  }
 }
 #hero-banner #call-to-action-top {
-  vertical-align: top;
+  margin: .5em auto;
 }
 /*# sourceMappingURL=HeroBanner.css.map */

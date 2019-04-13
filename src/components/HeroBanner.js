@@ -2,22 +2,20 @@ import React from "react"
 import "./HeroBanner.css"
 
 export const HeroBanner = () => (
-  <section id={"banner"}>
-    <table id={"hero-banner"}>
-      <tbody>
-      <tr id={"main-heading"}>
-        <td>Gateway To the GTA</td>
-      </tr>
-      <tr id={"supporting-headline"}>
-        <td>Where dreams come true</td>
-      </tr>
-      <tr id={"call-to-action-top"}>
-        <td>
+  <section id={"banner-section"}>
+    <div id={"hero-banner"}>
+      <div id={"main-card"}>
+        <div id={"main-heading"}>
+          <span>Gateway To the GTA and more</span>
+        </div>
+        <div id={"supporting-headline"}>
+          Where dreams come true, you will buy this condo now! trust me
+        </div>
+        <div id={"call-to-action-top"}>
           <button className="call-to-action-btn">Reserve Your Spot</button>
-        </td>
-      </tr>
-      </tbody>
-    </table>
+        </div>
+      </div>
+    </div>
   </section>
 )
 
