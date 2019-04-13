@@ -26,7 +26,7 @@ export function jumpToSlide(selection, isUserClick = false) {
   if (slides[slideIndex - 1]) slides[slideIndex - 1].style.display = "block"
   if (dots[slideIndex - 1]) dots[slideIndex - 1].className += " active"
   clearTimeout(slideshowTimeout)
-  slideshowTimeout = setTimeout(goToAdjacentSlide, isUserClick ? 10000 : 5000);
+  slideshowTimeout = setTimeout(goToAdjacentSlide, isUserClick ? 15000 : 5000);
 }
 
 function goToAdjacentSlide(number = 1, isUserClick = false) {

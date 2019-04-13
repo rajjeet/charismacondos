@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import "./index.css"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import { FloorPlans } from "../components/FloorPlans"
 import { HeroBanner } from "../components/HeroBanner"
