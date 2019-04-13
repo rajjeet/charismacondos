@@ -1,6 +1,7 @@
 #page-header {
   width: 100%;
   background: white;
+  z-index: 100;
 }
 #page-header #main-logo {
   display: inline-block;
