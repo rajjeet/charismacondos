@@ -7,6 +7,7 @@ import { HeroBanner } from "../components/HeroBanner"
 import { Location } from "../components/Location"
 import { Amenities } from "../components/Amenities"
 import { Banner } from "../components/Banner"
+import { PhotoGallery } from "../components/PhotoGallery"
 
 class IndexPage extends Component {
   render() {
@@ -14,6 +15,7 @@ class IndexPage extends Component {
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
         <HeroBanner/>
+        <PhotoGallery/>
         <Location/>
         <Amenities/>
         <Banner/>
