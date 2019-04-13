@@ -1,4 +1,4 @@
-@import 'Layout.css';
+@import '../components/Layout';
 
 #photo-gallery-container {
   text-align: center;
@@ -118,6 +118,11 @@
     display: inline-block;
     transition: background-color 0.6s ease;
     outline: none;
+
+    @media (max-width: @mobileBreakpoint){
+      height: 15px;
+      width: 15px;
+    }
   }
 
   .dot.active {

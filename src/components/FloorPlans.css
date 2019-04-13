@@ -92,6 +92,7 @@ span {
 }
 @media (max-width: 660px) {
   #floor-plans-container #floor-plan-buttons button {
+    padding: 0;
     display: inline;
     width: 40%;
     margin: .1em .1em;
@@ -125,6 +126,10 @@ span {
   #floor-plans-container #floor-plan-image-box .floor-plan {
     width: 80%;
   }
+}
+#floor-plans-container #floor-plan-image-box .call-to-action-btn {
+  padding: .3em 0.5em;
+  font-size: 1.3em;
 }
 #floor-plans-container #floor-plan-image-box .floor-plan:first-of-type {
   display: block;
