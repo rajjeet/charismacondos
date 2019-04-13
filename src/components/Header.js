@@ -5,17 +5,22 @@ import "./Header.css"
 import GatsbyImage from "gatsby-image"
 
 window.onscroll = () => {
-  console.log("window.pageYOffset", window.pageYOffset)
   const header = document.getElementById("page-header")
   if (header) {
     const sticky = header.offsetTop
-    console.log("header.offsetTop", header.offsetTop)
     if (window.pageYOffset > sticky) {
       header.classList.add("sticky")
     } else {
       header.classList.remove("sticky")
     }
   }
+}
+
+const activateLink = (event) => {
+
+  let linkNodes = document.getElementById('header-links').childNodes
+  linkNodes.forEach(linkNode => linkNode.classList.remove("active"))
+  event.target.classList.add('active')
 }
 
 const Header = () => (
@@ -32,15 +37,15 @@ const Header = () => (
    `} render={data => (
     <div id={"page-header"} className="">
       <div id={"main-logo"}>
-        <Link to={"#"}>
+        <a href={"#"}>
           <GatsbyImage fluid={data.mobilioLogo.childImageSharp.fluid}/>
-        </Link>
+        </a>
       </div>
-      <div className={"links"}>
-        <Link to={"#photo-gallery"} activeStyle={{ backgroundColor: "darkred", color: "white" }}>Gallery</Link>
-        <Link to={"#location"} activeStyle={{ backgroundColor: "darkred", color: "white" }}>Location</Link>
-        <Link to={"#amenities"} activeStyle={{ backgroundColor: "darkred", color: "white" }}>Amenities</Link>
-        <Link to={"#floor-plans"} activeStyle={{ backgroundColor: "darkred", color: "white" }}>Floor Plans</Link>
+      <div id={"header-links"}>
+        <a href={"#photo-gallery"} onClick={activateLink}>Gallery</a>
+        <a href={"#location"} onClick={activateLink}>Location</a>
+        <a href={"#amenities"} onClick={activateLink}>Amenities</a>
+        <a href={"#floor-plans"} onClick={activateLink}>Floor Plans</a>
       </div>
     </div>
   )

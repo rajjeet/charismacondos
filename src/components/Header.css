@@ -7,14 +7,14 @@
   display: inline-block;
   width: 100px;
 }
-#page-header .links {
+#page-header #header-links {
   display: inline-block;
   width: 70%;
   float: right;
   margin-right: 1em;
   text-align: right;
 }
-#page-header .links a {
+#page-header #header-links a {
   padding: 6px 8px;
   margin: 3px 3px;
   font-size: .8em;
@@ -23,7 +23,8 @@
   text-decoration: none;
   color: dimgrey;
 }
-#page-header .links a:hover {
+#page-header #header-links a:hover,
+#page-header #header-links a.active {
   background-color: darkred;
   color: white;
 }
