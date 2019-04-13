@@ -4,10 +4,12 @@ import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 let slideIndex = 1
+let slideshowTimeout;
+jumpToSlide(1)
 
 const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
 
-export function jumpToSlide(selection) {
+export function jumpToSlide(selection, isUserClick = false) {
   let index
   const slides = document.getElementsByClassName("photo-slide")
   const dots = document.getElementsByClassName("dot")
@@ -23,10 +25,12 @@ export function jumpToSlide(selection) {
   }
   if (slides[slideIndex - 1]) slides[slideIndex - 1].style.display = "block"
   if (dots[slideIndex - 1]) dots[slideIndex - 1].className += " active"
+  clearTimeout(slideshowTimeout)
+  slideshowTimeout = setTimeout(goToAdjacentSlide, isUserClick ? 10000 : 5000);
 }
 
-function goToAdjacentSlide(number) {
-  return jumpToSlide(slideIndex += number)
+function goToAdjacentSlide(number = 1, isUserClick = false) {
+  return jumpToSlide(slideIndex += number, isUserClick)
 }
 
 function renderPhotoSlide(name, image) {
@@ -113,15 +117,15 @@ export const PhotoGallery = () => (
           {Object.keys(data).map(photo =>
             renderPhotoSlide(photo, data[photo].childImageSharp.fluid)
           )}
-          <button className="prev-slide" onClick={() => goToAdjacentSlide(-1)}>&#10094;</button>
-          <button className="next-slide" onClick={() => goToAdjacentSlide(1)}>&#10095;</button>
+          <button className="prev-slide" onClick={() => goToAdjacentSlide(-1, true)}>&#10094;</button>
+          <button className="next-slide" onClick={() => goToAdjacentSlide(1, true)}>&#10095;</button>
         </div>
       </div>
       <div id={"photo-navigator"}>
 
         {
           range(1, Object.keys(data).length, 1).map((element) =>
-            <button key={`d${element}`} className="dot" onClick={() => jumpToSlide(element)}/>,
+            <button key={`d${element}`} className="dot" onClick={() => jumpToSlide(element, true)}/>,
           )
         }
       </div>
