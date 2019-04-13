@@ -1,7 +1,9 @@
+@import '../components/Layout';
+
 #page-header {
   width: 100%;
   background: white;
-  z-index: 100;
+  z-index: 1;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -21,6 +23,7 @@
     margin-right: 1em;
     text-align: right;
     margin-top: 3px;
+
     a {
       padding: 6px 6px;
       margin: 3px 3px;
@@ -34,6 +37,103 @@
     a:hover, a.active {
       background-color: darkred;
       color: white;
+    }
+
+    @media (max-width: @mobileBreakpoint) {
+      display: none;
+    }
+  }
+
+  #menu-toggle {
+    display: none;
+    position: relative;
+    user-select: none;
+    float: right;
+    margin-right: 1em;
+    margin-top: 5px;
+
+    @media (max-width: @mobileBreakpoint) {
+      display: inline-block;
+    }
+
+    input {
+      display: block;
+      width: 37px;
+      height: 32px;
+      position: absolute;
+      top: -7px;
+      left: -5px;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 4;
+      -webkit-touch-callout: none;
+    }
+
+    span {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;
+      background: darkred;
+      border-radius: 3px;
+      z-index: 3;
+      transform-origin: 4px 0;
+      transition: transform 0.5s cubic-bezier(.77, .2, .05, 1),
+      background .5s cubic-bezier(.77, .2, .05, 1),
+      opacity .55s ease;
+    }
+
+    span:first-child {
+      transform-origin: 0 0;
+    }
+
+    span:nth-last-child(2) {
+      transform-origin: 0 100%;
+    }
+
+    input:checked ~ span {
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+      background: #232323;
+    }
+
+    input:checked ~ span:nth-last-child(3) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    input:checked ~ span:nth-last-child(2) {
+      transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    input:checked ~ ul {
+      transform: translate(-80%, 0);
+    }
+
+  }
+
+  #menu {
+    position: absolute;
+    width: 40vw;
+    margin: -90px 0 0 70px;
+    padding: 125px 100px 100vh 20px;
+    z-index: 2;
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0 0;
+    text-align: right;
+    transition: transform 0.5s cubic-bezier(.77, .2, .05, 1.0);
+
+    a {
+      text-decoration-line: none;
+    }
+
+    li {
+      padding: 12px 0;
+      font-size: 22px;
+      color: dimgrey;
     }
   }
 }

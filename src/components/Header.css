@@ -1,7 +1,64 @@
+html {
+  scroll-behavior: smooth;
+}
+.section-title {
+  position: relative;
+}
+.section-title span {
+  position: absolute;
+  top: -60px;
+}
+body {
+  font-family: Ubuntu, Geneva, sans-serif;
+  background: snow;
+  color: #444444;
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: darkred;
+  font-size: 3em;
+}
+.call-to-action-btn {
+  font-size: 2em;
+  background-color: #8b0000;
+  color: whitesmoke;
+  border: none;
+  outline: none;
+  text-shadow: 2px 2px 3px dimgrey;
+  padding: .4em 2em;
+  border-radius: 10px;
+  font-family: Ubuntu, Geneva, sans-serif;
+}
+@media (max-width: 660px) {
+  .call-to-action-btn {
+    padding: .3em 0.5em;
+    font-size: 1.3em;
+  }
+}
+.call-to-action-btn:hover {
+  background-color: #7b0000;
+  cursor: pointer;
+}
+.call-to-action-btn:active {
+  background-color: #5b0000;
+}
+h1 {
+  margin-bottom: 0;
+}
+p,
+span {
+  margin-top: .2em;
+}
 #page-header {
   width: 100%;
   background: white;
-  z-index: 100;
+  z-index: 1;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -34,6 +91,90 @@
 #page-header #header-links a.active {
   background-color: darkred;
   color: white;
+}
+@media (max-width: 425px) {
+  #page-header #header-links {
+    display: none;
+  }
+}
+#page-header #menu-toggle {
+  display: none;
+  position: relative;
+  user-select: none;
+  float: right;
+  margin-right: 1em;
+  margin-top: 5px;
+}
+@media (max-width: 425px) {
+  #page-header #menu-toggle {
+    display: inline-block;
+  }
+}
+#page-header #menu-toggle input {
+  display: block;
+  width: 37px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 4;
+  -webkit-touch-callout: none;
+}
+#page-header #menu-toggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: darkred;
+  border-radius: 3px;
+  z-index: 3;
+  transform-origin: 4px 0;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+#page-header #menu-toggle span:first-child {
+  transform-origin: 0 0;
+}
+#page-header #menu-toggle span:nth-last-child(2) {
+  transform-origin: 0 100%;
+}
+#page-header #menu-toggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+#page-header #menu-toggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#page-header #menu-toggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#page-header #menu-toggle input:checked ~ ul {
+  transform: translate(-80%, 0);
+}
+#page-header #menu {
+  position: absolute;
+  width: 40vw;
+  margin: -90px 0 0 70px;
+  padding: 125px 100px 100vh 20px;
+  z-index: 2;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0 0;
+  text-align: right;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+#page-header #menu a {
+  text-decoration-line: none;
+}
+#page-header #menu li {
+  padding: 12px 0;
+  font-size: 22px;
+  color: dimgrey;
 }
 #page-header.sticky {
   position: fixed;

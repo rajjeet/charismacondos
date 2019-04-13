@@ -4,6 +4,11 @@ import React from "react"
 import "./Header.css"
 import GatsbyImage from "gatsby-image"
 
+function deactivateMenuLinks() {
+  let linkNodes = document.getElementById("header-links").childNodes
+  linkNodes.forEach(linkNode => linkNode.classList.remove("active"))
+}
+
 window.onscroll = () => {
   const header = document.getElementById("page-header")
   if (header) {
@@ -14,13 +19,14 @@ window.onscroll = () => {
       header.classList.remove("sticky")
     }
   }
+
 }
 
 const activateLink = (event) => {
-
-  let linkNodes = document.getElementById('header-links').childNodes
-  linkNodes.forEach(linkNode => linkNode.classList.remove("active"))
-  event.target.classList.add('active')
+  let checkbox = document.getElementById("menu-toggle-checkbox")
+  if (checkbox.checked) checkbox.checked = false
+  deactivateMenuLinks()
+  event.target.classList.add("active")
 }
 
 const Header = () => (
@@ -47,7 +53,28 @@ const Header = () => (
         <a href={"#amenities"} onClick={activateLink}>Amenities</a>
         <a href={"#floor-plans"} onClick={activateLink}>Floor Plans</a>
       </div>
+      <div id={"menu-toggle"}>
+        <input id={"menu-toggle-checkbox"} type={"checkbox"}/>
+        <span/>
+        <span/>
+        <span/>
+        <ul id={"menu"}>
+          <a href={"#photo-gallery"} onClick={activateLink}>
+            <li>Gallery</li>
+          </a>
+          <a href={"#location"} onClick={activateLink}>
+            <li>Location</li>
+          </a>
+          <a href={"#amenities"} onClick={activateLink}>
+            <li>Amenities</li>
+          </a>
+          <a href={"#floor-plans"} onClick={activateLink}>
+            <li>Floor Plans</li>
+          </a>
+        </ul>
+      </div>
     </div>
+
   )
   }/>
 
