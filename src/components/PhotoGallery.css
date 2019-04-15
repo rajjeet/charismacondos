@@ -144,6 +144,9 @@ span {
   color: whitesmoke;
   font-family: Ubuntu, Geneva, sans-serif;
 }
+.modal .modal__inner button:hover {
+  background-color: #5b0000;
+}
 .modal-state {
   display: none;
 }

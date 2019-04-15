@@ -1,0 +1,15 @@
+Transform: 'AWS::Serverless-2016-10-31'
+Resources:
+  HandleFormSubmit:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Runtime: nodejs8.10
+      Handler: index.handler
+      CodeUri: ./
+      Events:
+        FormsApi:
+          Type: Api
+          Properties:
+            Path: /contactme
+            Method: POST
+

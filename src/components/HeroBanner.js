@@ -3,6 +3,33 @@ import "./HeroBanner.css"
 import { graphql, StaticQuery } from "gatsby"
 import GatsbyImage from "gatsby-image"
 
+const handleSubmit = event => {
+  event.preventDefault()
+  let fullName = document.getElementById("fullName").value
+  let email = document.getElementById("email").value
+  let phone = document.getElementById("phone").value
+  let message = document.getElementById("message").value
+  let realtor = document.getElementById("realtor").checked ? "yes" : "no"
+  console.log(`fullname: ${fullName}, email: ${email}, phone: ${phone}, message: ${message}, realtor: ${realtor}`)
+
+  window.grecaptcha.execute("6LcUrZwUAAAAAKNtNJjf_quUmMkugTBYqDls2RRW", { action: "homepage" })
+    .then(function(token) {
+      let xhr = new XMLHttpRequest()
+      let body = `name=${fullName}&email=${email}&phone=${phone}&message=${message}&realtor=${realtor}&token=${token}`
+      xhr.onerror = () => console.log("fail")
+      // xhr.open("POST", "https://5gki6cwsdg.execute-api.us-east-1.amazonaws.com/Stage/contactme", true);
+      xhr.open("POST", "http://127.0.0.1:3000/contactme", true)
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+      xhr.onload = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log('success')
+        }
+      }
+      xhr.send(body)
+    })
+
+}
+
 export const HeroBanner = () => (
   <StaticQuery query={graphql`
     query {
@@ -37,31 +64,31 @@ export const HeroBanner = () => (
         <div className="modal__inner">
           <label className="modal__close" htmlFor="modal-1"/>
           <h1>Reserve</h1>
-          <form action={(event) => event.preventDefault()}>
+          <form onSubmit={handleSubmit}>
             <div>
-              <label htmlFor={"name"}>Name<span style={{color:'red'}}>*</span></label>
+              <label htmlFor={"name"}>Name<span style={{ color: "red" }}>*</span></label>
               <input type={"text"} required id={"fullName"} name={"fullName"}/>
             </div>
             <div>
-              <label htmlFor={"email"}>Email<span style={{color:'red'}}>*</span></label>
+              <label htmlFor={"email"}>Email<span style={{ color: "red" }}>*</span></label>
               <input type={"email"} required id={"email"} name={"email"}/>
             </div>
             <div>
-              <label htmlFor={"phone"}>Phone<span style={{color:'red'}}>*</span></label>
+              <label htmlFor={"phone"}>Phone<span style={{ color: "red" }}>*</span></label>
               <input type={"tel"} required id={"phone"} name={"phone"}/>
             </div>
             <div>
               <label htmlFor={"message"}>Message</label>
-              <textarea style={{width: '100%'}} rows={4} id={"message"} name={"message"}/>
+              <textarea style={{ width: "100%" }} rows={4} id={"message"} name={"message"}/>
             </div>
             <div>
-              <label htmlFor={"message"} className={'container'}>Are you a realtor?
-                <input type={'checkbox'} id={'realtor'} name={'message'} />
-                <span className={'checkmark'} />
+              <label htmlFor={"message"} className={"container"}>Are you a realtor?
+                <input type={"checkbox"} id={"realtor"} name={"message"}/>
+                <span className={"checkmark"}/>
               </label>
             </div>
-            <button type={'submit'}>Reserve Your Spot</button>
-            <div className={'disclaimer'}>The information you provide is strictly confidential</div>
+            <button type={"submit"}>Reserve Your Spot</button>
+            <div className={"disclaimer"}>The information you provide is strictly confidential</div>
           </form>
         </div>
       </div>

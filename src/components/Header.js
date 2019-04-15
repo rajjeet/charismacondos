@@ -1,4 +1,4 @@
-import { graphql, Link, StaticQuery } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import "./Header.css"
@@ -43,7 +43,7 @@ const Header = () => (
    `} render={data => (
     <div id={"page-header"} className="">
       <div id={"main-logo"}>
-        <a href={"#"}>
+        <a href={"/#"}>
           <GatsbyImage fluid={data.mobilioLogo.childImageSharp.fluid}/>
         </a>
       </div>
