@@ -9,6 +9,7 @@ import { Amenities } from "../components/Amenities"
 import { Banner } from "../components/Banner"
 import { PhotoGallery } from "../components/PhotoGallery"
 import { FooterContact } from "../components/FooterContact"
+import { Specs } from "../components/Specs"
 
 class IndexPage extends Component {
   render() {
@@ -16,6 +17,7 @@ class IndexPage extends Component {
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
         <HeroBanner/>
+        <Specs />
         <PhotoGallery/>
         <Location/>
         <Amenities/>
