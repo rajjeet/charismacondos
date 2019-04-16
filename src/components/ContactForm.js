@@ -3,7 +3,8 @@ import "../components/ContactForm.css"
 
 const handleSubmit = event => {
   event.preventDefault()
-  let formData = new FormData(event.target)
+  let form = event.target
+  let formData = new FormData(form)
   let fullName = formData.get("fullName")
   let email = formData.get("email")
   let phone = formData.get("phone")
@@ -20,6 +21,7 @@ const handleSubmit = event => {
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
       xhr.onload = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
+          form.reset()
           console.log("success")
         }
       }
