@@ -106,9 +106,9 @@ span {
 }
 @media screen and (max-width: 660px) {
   .modal .modal__inner {
-    width: 90%;
+    width: 80%;
     box-sizing: border-box;
-    height: 85%;
+    height: 75%;
   }
 }
 .modal .modal__inner .modal__close {
