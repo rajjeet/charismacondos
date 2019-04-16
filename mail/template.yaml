@@ -6,6 +6,14 @@ Resources:
       Runtime: nodejs8.10
       Handler: index.handler
       CodeUri: ./
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - ses:sendEmail
+                - ses:sendRawEmail
+              Resource: '*'
       Events:
         FormsApi:
           Type: Api

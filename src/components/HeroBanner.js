@@ -10,15 +10,14 @@ const handleSubmit = event => {
   let phone = document.getElementById("phone").value
   let message = document.getElementById("message").value
   let realtor = document.getElementById("realtor").checked ? "yes" : "no"
-  console.log(`fullname: ${fullName}, email: ${email}, phone: ${phone}, message: ${message}, realtor: ${realtor}`)
 
   window.grecaptcha.execute("6LcUrZwUAAAAAKNtNJjf_quUmMkugTBYqDls2RRW", { action: "homepage" })
     .then(function(token) {
       let xhr = new XMLHttpRequest()
       let body = `name=${fullName}&email=${email}&phone=${phone}&message=${message}&realtor=${realtor}&token=${token}`
       xhr.onerror = () => console.log("fail")
-      // xhr.open("POST", "https://5gki6cwsdg.execute-api.us-east-1.amazonaws.com/Stage/contactme", true);
-      xhr.open("POST", "http://127.0.0.1:3000/contactme", true)
+      xhr.open("POST", "https://5gki6cwsdg.execute-api.us-east-1.amazonaws.com/Prod/contactme", true);
+      // xhr.open("POST", "http://127.0.0.1:3000/contactme", true)
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
       xhr.onload = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {

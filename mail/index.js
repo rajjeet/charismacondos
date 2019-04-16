@@ -7,13 +7,13 @@ exports.handler = async (event) => {
   let SECRET = "6LcUrZwUAAAAAAD7ByMzmCOysxlxLRxi7UvUhWn9"
   const data = querystring.parse(event.body)
   const token = data ? data.token : null
-
   if (token) {
     const response = await axios({
       method: "post",
       url: `https://www.google.com/recaptcha/api/siteverify?secret=${SECRET}&response=${token}`,
     })
-    if (Number(response.data.score) > 0.3) {
+    console.log('recaptcha response score', response.data.score)
+    if (Number(response.data.score) >= 0.1) {
 
       AWS.config.update({ region: "us-east-1" })
 
@@ -37,7 +37,6 @@ exports.handler = async (event) => {
         },
         Source: "rajjeet.phull@gmail.com",
       }
-
       try {
         const result = await new AWS.SES({ apiVersion: "2010-12-01" })
           .sendEmail(params)
@@ -54,10 +53,9 @@ exports.handler = async (event) => {
       }
     }
   }
-
   return {
     statusCode: 400,
-    headers: { "Access-Control-Allow-Origin": "*" },
+    headers: { "Access-Control-Allow-Origin": "*" }
   }
 
 }

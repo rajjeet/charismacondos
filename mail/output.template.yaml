@@ -1,0 +1,22 @@
+Resources:
+  HandleFormSubmit:
+    Properties:
+      CodeUri: s3://cf-templates-phullr2/56e9d115c2f747855585c2f44bea4ade
+      Events:
+        FormsApi:
+          Properties:
+            Method: POST
+            Path: /contactme
+          Type: Api
+      Handler: index.handler
+      Policies:
+      - Statement:
+        - Action:
+          - ses:sendEmail
+          - ses:sendRawEmail
+          Effect: Allow
+          Resource: '*'
+        Version: '2012-10-17'
+      Runtime: nodejs8.10
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31
