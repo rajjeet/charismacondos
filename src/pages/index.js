@@ -8,6 +8,7 @@ import { Location } from "../components/Location"
 import { Amenities } from "../components/Amenities"
 import { Banner } from "../components/Banner"
 import { PhotoGallery } from "../components/PhotoGallery"
+import { FooterContact } from "../components/FooterContact"
 
 class IndexPage extends Component {
   render() {
@@ -20,6 +21,7 @@ class IndexPage extends Component {
         <Amenities/>
         <Banner/>
         <FloorPlans/>
+        <FooterContact/>
       </Layout>
     )
   }

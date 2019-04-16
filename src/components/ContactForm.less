@@ -1,0 +1,108 @@
+form {
+  max-width: 100%;
+
+  div {
+    margin: 20px auto;
+
+    label {
+      font-size: 1.1em;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin: 5px auto;
+      padding: 10px;
+      font-size: 1.7em;
+      border: 1px solid dimgrey;
+      border-radius: 5px;
+      box-sizing: border-box;
+
+      &:focus {
+        outline: 0;
+
+        & + label {
+          opacity: 0;
+        }
+      }
+
+    }
+
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+
+        &:checked {
+          & ~ .checkmark {
+            background-color: darkred;
+
+            &:after {
+              display: block;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        input {
+          & ~ .checkmark {
+            background-color: #ccc;
+          }
+        }
+      }
+
+      .checkmark {
+        &:after {
+          left: 9px;
+          top: 5px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 3px 3px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    .checkmark {
+      position: absolute;
+      margin-top: 0;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+    }
+
+
+  }
+
+  .disclaimer {
+    padding: 0 0;
+    margin: 6px 0;
+  }
+}
