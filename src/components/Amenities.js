@@ -20,7 +20,7 @@ function getAmenity(frontIcon, text) {
 }
 
 export const Amenities = () => (
-  <div id={"amenities-container"}>
+  <div id={"amenities-container"} className={'section-container'}>
     <h1 className={'section-title'}>Amenities<span id={"amenities"}/></h1>
     <p>Live with luxury, convenience, and comfort</p>
     {getAmenity(faFilm, "Theatre Room")}

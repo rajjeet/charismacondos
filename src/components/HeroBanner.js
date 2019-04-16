@@ -16,7 +16,7 @@ export const HeroBanner = () => (
       }
      }
    `} render={data => (
-    <div id={"hero-banner"}>
+    <div id={"hero-banner"} className={'section-container'}>
       <div id={"main-card"}>
         <div id={"main-logo"}>
           <GatsbyImage fluid={data.mobilioLogo.childImageSharp.fluid}/>

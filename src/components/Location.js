@@ -10,7 +10,7 @@ function getKpi(digit, timescale, caption) {
 }
 
 export const Location = () => (
-  <div id={"location-container"}>
+  <div id={"location-container"} className={'section-container'}>
   <div id={"location-inner-container"}>
     <h1 className={'section-title'}>Location<span id={'location'} /></h1>
     <p>Just north of Toronto, a new neighbourhood in Vaughan Metropolitan Centre rises. Welcome to Mobilio, situated at

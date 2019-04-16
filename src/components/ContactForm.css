@@ -1,9 +1,6 @@
 form {
   max-width: 100%;
 }
-form div {
-  margin: 20px auto;
-}
 form div label {
   font-size: 1.1em;
 }

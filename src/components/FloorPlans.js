@@ -108,7 +108,7 @@ export const FloorPlans = ({ data }) => (
 
   }
 `} render={data => (
-      <div id={"floor-plans-container"}>
+      <div id={"floor-plans-container"} className={'section-container'}>
         <h1 className={'section-title'}>Floor Plans<span id={'floor-plans'} /></h1>
         <p>Find the perfect layout that suits your lifestyle</p>
         <div id={"floor-plan-buttons"}>

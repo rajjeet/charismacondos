@@ -3,7 +3,7 @@ import "./FooterContact.css"
 import { ContactForm } from "./ContactForm"
 
 export const FooterContact = () => (
-  <div id={'footer-contact-container'}>
+  <div id={'footer-contact-container'} className={'section-container'}>
     <h1>Contact Us</h1>
     <ContactForm/>
   </div>

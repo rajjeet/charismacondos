@@ -2,7 +2,7 @@ import React from "react"
 import "./Specs.css"
 
 export const Specs = () => (
-  <div id={"specs-container"}>
+  <div id={"specs-container"} className={'section-container'}>
     <h1>Specs</h1>
     <table>
       <tbody>

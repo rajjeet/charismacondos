@@ -109,7 +109,7 @@ export const PhotoGallery = () => (
     }
    }
     `} render={data => (
-    <div id={"photo-gallery-container"}>
+    <div id={"photo-gallery-container"} className={'section-container'}>
       <div>
         <h1 className={"section-title"}>Gallery<span id={"photo-gallery"}/></h1>
         <p>Mobilio Residents will experience the best of Vaughan's urban area, transit, shopping, and much more.</p>
