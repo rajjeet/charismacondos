@@ -1,13 +1,14 @@
 import React from "react"
-import '../components/ContactForm.css'
+import "../components/ContactForm.css"
 
 const handleSubmit = event => {
   event.preventDefault()
-  let fullName = document.getElementById("fullName").value
-  let email = document.getElementById("email").value
-  let phone = document.getElementById("phone").value
-  let message = document.getElementById("message").value
-  let realtor = document.getElementById("realtor").checked ? "yes" : "no"
+  let formData = new FormData(event.target)
+  let fullName = formData.get("fullName")
+  let email = formData.get("email")
+  let phone = formData.get("phone")
+  let message = formData.get("message")
+  let realtor = formData.get("realtor")
 
   window.grecaptcha.execute("6LcUrZwUAAAAAKNtNJjf_quUmMkugTBYqDls2RRW", { action: "homepage" })
     .then(function(token) {
@@ -51,7 +52,7 @@ export function ContactForm() {
         <span className={"checkmark"}/>
       </label>
     </div>
-    <button className={'registerButton'} type={"submit"}>Reserve Your Spot</button>
+    <button className={"registerButton"} type={"submit"}>Reserve Your Spot</button>
     <p className={"disclaimer"}>
               <span>The information you provide is strictly confidential.
               This site is protected by reCAPTCHA and the Google </span>
