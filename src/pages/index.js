@@ -10,12 +10,14 @@ import { Banner } from "../components/Banner"
 import { PhotoGallery } from "../components/PhotoGallery"
 import { FooterContact } from "../components/FooterContact"
 import { Specs } from "../components/Specs"
+import { Message } from "../components/Message"
 
 class IndexPage extends Component {
   render() {
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
+        <Message/>
         <HeroBanner/>
         <Specs />
         <PhotoGallery/>

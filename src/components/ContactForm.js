@@ -11,6 +11,9 @@ const handleSubmit = event => {
   let message = formData.get("message")
   let realtor = formData.get("realtor")
 
+  let modelStates = document.getElementById('modal-1')
+  modelStates.checked = false;
+
   window.grecaptcha.execute("6LcUrZwUAAAAAKNtNJjf_quUmMkugTBYqDls2RRW", { action: "homepage" })
     .then(function(token) {
       let xhr = new XMLHttpRequest()
@@ -22,7 +25,9 @@ const handleSubmit = event => {
       xhr.onload = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
           form.reset()
-          console.log("success")
+          let message = document.getElementById('message-container')
+          message.style.opacity = 1;
+          setTimeout(() => message.style.opacity = 0, 3000)
         }
       }
       xhr.send(body)
