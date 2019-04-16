@@ -112,7 +112,7 @@ export const PhotoGallery = () => (
     <div id={"photo-gallery-container"}>
       <div>
         <h1 className={"section-title"}>Gallery<span id={"photo-gallery"}/></h1>
-        <p>Look at all these amazing pictures</p>
+        <p>Mobilio Residents will experience the best of Vaughan's urban area, transit, shopping, and much more.</p>
         <div id={"photo-container"}>
           {Object.keys(data).map(photo =>
             renderPhotoSlide(photo, data[photo].childImageSharp.fluid),

@@ -11,8 +11,12 @@
   overflow: hidden;
 
   #main-logo {
-    max-width: 35%;
+    max-width: 15%;
     margin: 0 auto;
+
+    @media (max-width: @tabletBreakpoint) {
+      max-width: 30%;
+    }
 
     img {
       z-index: 1;

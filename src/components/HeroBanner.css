@@ -175,8 +175,13 @@ span {
   overflow: hidden;
 }
 #hero-banner #main-logo {
-  max-width: 35%;
+  max-width: 15%;
   margin: 0 auto;
+}
+@media (max-width: 660px) {
+  #hero-banner #main-logo {
+    max-width: 30%;
+  }
 }
 #hero-banner #main-logo img {
   z-index: 1;

@@ -46,14 +46,17 @@ export const HeroBanner = () => (
         <div id={"main-logo"}>
           <GatsbyImage fluid={data.mobilioLogo.childImageSharp.fluid}/>
         </div>
+        <div>
+          New Condo Development in Downtown Vaughan
+        </div>
         <div id={"main-heading"}>
-          <span>Gateway To the GTA and more</span>
+          <span>43 Minutes to Everything</span>
         </div>
         <div id={"supporting-headline"}>
-          Where dreams come true, you will buy this condo now! trust me
+          Your Ticket to Convenience, Community, and Connectivity in the GTA
         </div>
         <div className={"call-to-action-container"}>
-          <label htmlFor={"modal-1"} className="call-to-action-btn">Reserve Your Spot</label>
+          <label htmlFor={"modal-1"} className="call-to-action-btn">Register</label>
         </div>
       </div>
 

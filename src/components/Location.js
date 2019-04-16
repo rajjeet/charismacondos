@@ -16,12 +16,12 @@ export const Location = () => (
       the epicentre of connectivity, convenience and innovation, and only steps away from the subway. </p>
 
     <div id={"location-kpi"}>
-      {getKpi(2, 'min', 'Subway')}
-      {getKpi(3, 'min', 'Shopping')}
-      {getKpi(4, 'min', 'Highway')}
-      {getKpi(5, 'min', 'Entertainment')}
-      {getKpi(6, 'min', 'Recreation')}
-      {getKpi(7, 'min', 'Dining')}
+      {getKpi(1, 'min', 'Subway')}
+      {getKpi(1, 'min', 'Shopping')}
+      {getKpi(3, 'min', 'Highway')}
+      {getKpi(2, 'min', 'Entertainment')}
+      {getKpi(2, 'min', 'Recreation')}
+      {getKpi(2, 'min', 'Dining')}
     </div>
 
     <iframe title={"googlemaps"} height="450"
