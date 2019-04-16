@@ -1,4 +1,11 @@
 #footer-contact-container {
+  background: #eee;
+}
+#footer-contact-container h1 {
+  padding-top: 1em;
+  text-align: center;
+}
+#footer-contact-container form {
   width: 80%;
   margin: 0 auto;
 }
