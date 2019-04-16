@@ -1,5 +1,5 @@
 @fontFamily: Ubuntu, Geneva, sans-serif;
-@primaryBtnColor:darkred;
+@primaryBtnColor: darkred;
 @primary: 10px;
 @buttonBorderRadius: 10px;
 @mobileBreakpoint: 425px;
@@ -14,12 +14,13 @@ html {
 main {
 }
 
-.grecaptcha-badge{
+.grecaptcha-badge {
   opacity: 0;
 }
 
 .section-title {
   position: relative;
+
   span {
     position: absolute;
     top: -60px;
@@ -34,38 +35,10 @@ body {
   margin: 0;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   color: darkred;
   font-size: 3em;
 }
-
-.call-to-action-btn {
-  font-size: 2em;
-  background-color: @primaryBtnColor;
-  color: whitesmoke;
-  border: none;
-  outline: none;
-
-  text-shadow: 2px 2px 3px dimgrey;
-  margin-top: 2em;
-  padding: .4em 2em;
-  border-radius: 10px;
-  font-family: @fontFamily;
-  @media (max-width: @tabletBreakpoint) {
-    padding: .3em 0.5em;
-    font-size: 1.3em;
-  }
-}
-
-.call-to-action-btn:hover {
-  background-color: #7b0000;
-  cursor: pointer;
-}
-
-.call-to-action-btn:active {
-  background-color: #5b0000;
-}
-
 
 h1 {
   margin-bottom: 0;
@@ -75,8 +48,40 @@ p, span {
   margin-top: .2em;
 }
 
+.call-to-action-container {
+  margin-top: .9em;
+  padding: .4em 2em;
 
-.modal{
+  .call-to-action-btn {
+    font-size: 2em;
+    background-color: @primaryBtnColor;
+    color: whitesmoke;
+    border: none;
+    outline: none;
+
+    text-shadow: 2px 2px 3px dimgrey;
+    padding: .4em 2em;
+    border-radius: 10px;
+    font-family: @fontFamily;
+
+    &:hover {
+      background-color: #7b0000;
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: #5b0000;
+    }
+
+    @media (max-width: @tabletBreakpoint) {
+      padding: .3em 0.5em;
+      font-size: 1.3em;
+    }
+  }
+}
+
+
+.modal {
   z-index: 5;
   opacity: 0;
   visibility: hidden;
@@ -86,7 +91,7 @@ p, span {
   bottom: 0;
   left: 0;
   text-align: left;
-  background: rgba(0,0,0,.9);
+  background: rgba(0, 0, 0, .9);
   transition: opacity .25s ease;
 
   .modal__bg {
@@ -106,10 +111,10 @@ p, span {
     bottom: 0;
     left: 0;
     width: 30%;
-    height: 75%;
+    height: 80%;
     margin: auto;
     overflow: auto;
-    background:#fff;
+    background: #fff;
     border-radius: 5px;
     padding: 1em 2em;
 
@@ -120,7 +125,7 @@ p, span {
     @media screen and (max-width: @tabletBreakpoint) {
       width: 90%;
       box-sizing: border-box;
-      height: 80%;
+      height: 85%;
     }
 
     .modal__close {
@@ -154,6 +159,7 @@ p, span {
     .modal__close:before {
       transform: rotate(-45deg);
     }
+
     button {
       width: 100%;
       box-shadow: none;

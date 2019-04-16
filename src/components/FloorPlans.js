@@ -134,7 +134,9 @@ export const FloorPlans = ({ data }) => (
           {getFloorPlanImage("suite2a", data.floorPlanSuite2A)}
           {getFloorPlanImage("suite2e", data.floorPlanSuite2E)}
           {getFloorPlanImage("suite2f", data.floorPlanSuite2F)}
-          <button className={"call-to-action-btn"}>Reserve Floor Plan</button>
+          <div className={'call-to-action-container'}>
+          <label className={"call-to-action-btn"} htmlFor={'modal-1'}>Reserve Floor Plan</label>
+          </div>
         </div>
       </div>
   )}

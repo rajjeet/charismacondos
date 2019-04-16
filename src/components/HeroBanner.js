@@ -52,7 +52,7 @@ export const HeroBanner = () => (
         <div id={"supporting-headline"}>
           Where dreams come true, you will buy this condo now! trust me
         </div>
-        <div id={"call-to-action-top"}>
+        <div className={"call-to-action-container"}>
           <label htmlFor={"modal-1"} className="call-to-action-btn">Reserve Your Spot</label>
         </div>
       </div>
