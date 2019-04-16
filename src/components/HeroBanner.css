@@ -1,6 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+.grecaptcha-badge {
+  opacity: 0;
+}
 .section-title {
   position: relative;
 }
@@ -85,7 +88,7 @@ span {
   bottom: 0;
   left: 0;
   width: 30%;
-  height: 71%;
+  height: 75%;
   margin: auto;
   overflow: auto;
   background: #fff;
@@ -146,6 +149,7 @@ span {
 }
 .modal .modal__inner button:hover {
   background-color: #5b0000;
+  cursor: pointer;
 }
 .modal-state {
   display: none;
@@ -306,6 +310,6 @@ span {
 }
 #hero-banner form .disclaimer {
   padding: 0 0;
-  margin: 3px 0;
+  margin: 6px 0;
 }
 /*# sourceMappingURL=HeroBanner.css.map */

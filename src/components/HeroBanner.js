@@ -16,12 +16,12 @@ const handleSubmit = event => {
       let xhr = new XMLHttpRequest()
       let body = `name=${fullName}&email=${email}&phone=${phone}&message=${message}&realtor=${realtor}&token=${token}`
       xhr.onerror = () => console.log("fail")
-      xhr.open("POST", "https://5gki6cwsdg.execute-api.us-east-1.amazonaws.com/Prod/contactme", true);
+      xhr.open("POST", "https://5gki6cwsdg.execute-api.us-east-1.amazonaws.com/Prod/contactme", true)
       // xhr.open("POST", "http://127.0.0.1:3000/contactme", true)
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
       xhr.onload = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
-          console.log('success')
+          console.log("success")
         }
       }
       xhr.send(body)
@@ -87,7 +87,14 @@ export const HeroBanner = () => (
               </label>
             </div>
             <button type={"submit"}>Reserve Your Spot</button>
-            <div className={"disclaimer"}>The information you provide is strictly confidential</div>
+            <p className={"disclaimer"}>
+              <span>The information you provide is strictly confidential.
+              This site is protected by reCAPTCHA and the Google </span>
+              <a href="https://policies.google.com/privacy" target={'_blank'}>Privacy Policy</a>
+              <span> and </span>
+              <a href="https://policies.google.com/terms" target={'_blank'}>Terms of Service</a>
+              <span> apply.</span>
+            </p>
           </form>
         </div>
       </div>

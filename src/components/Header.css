@@ -1,6 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+.grecaptcha-badge {
+  opacity: 0;
+}
 .section-title {
   position: relative;
 }
@@ -85,7 +88,7 @@ span {
   bottom: 0;
   left: 0;
   width: 30%;
-  height: 71%;
+  height: 75%;
   margin: auto;
   overflow: auto;
   background: #fff;
@@ -146,6 +149,7 @@ span {
 }
 .modal .modal__inner button:hover {
   background-color: #5b0000;
+  cursor: pointer;
 }
 .modal-state {
   display: none;
@@ -171,19 +175,19 @@ span {
   display: inline-block;
   width: 100px;
   max-height: 32px;
+  margin: 3px 3px;
 }
 #page-header #header-links {
   display: inline-block;
   width: 70%;
   float: right;
-  margin-right: 1em;
   text-align: right;
-  margin-top: 3px;
+  margin: 4px 1em;
 }
 #page-header #header-links a {
   padding: 6px 6px;
   margin: 3px 3px;
-  font-size: .8em;
+  font-size: 1em;
   display: inline-block;
   border-radius: 5px;
   text-decoration: none;
@@ -193,6 +197,11 @@ span {
 #page-header #header-links a.active {
   background-color: darkred;
   color: white;
+}
+@media (max-width: 660px) {
+  #page-header #header-links {
+    font-size: .8em;
+  }
 }
 @media (max-width: 425px) {
   #page-header #header-links {
