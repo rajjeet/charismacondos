@@ -2,7 +2,6 @@ import React from "react"
 import "./HeroBanner.css"
 import { graphql, StaticQuery } from "gatsby"
 import GatsbyImage from "gatsby-image"
-import { ContactForm } from "./ContactForm"
 
 export const HeroBanner = () => (
   <StaticQuery query={graphql`
@@ -35,15 +34,6 @@ export const HeroBanner = () => (
         </div>
       </div>
 
-      <input className="modal-state" id="modal-1" type="checkbox"/>
-      <div className="modal">
-        <label className="modal__bg" htmlFor="modal-1"/>
-        <div className="modal__inner">
-          <label className="modal__close" htmlFor="modal-1"/>
-          <h1>Register</h1>
-          <ContactForm/>
-        </div>
-      </div>
     </div>
   )}/>
 )

@@ -78,7 +78,7 @@ export function ContactForm() {
         <span className={"checkmark"}/>
       </label>
     </div>
-    <button className={"registerButton"} type={"submit"}>Reserve Your Spot</button>
+    <button className={"registerButton"} type={"submit"}>Register</button>
     <p className={"disclaimer"}>
               <span>The information you provide is strictly confidential.
               This site is protected by reCAPTCHA and the Google </span>
