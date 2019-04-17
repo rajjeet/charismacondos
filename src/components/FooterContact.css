@@ -177,7 +177,7 @@ span {
 }
 @media (max-width: 425px) {
   #footer-contact-container form {
-    max-width: 95%;
+    max-width: 90%;
   }
 }
 /*# sourceMappingURL=FooterContact.css.map */
