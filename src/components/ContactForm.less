@@ -1,3 +1,4 @@
+@import "Layout";
 form {
   max-width: 100%;
   margin-top: .5em;
@@ -16,6 +17,15 @@ form {
       border-radius: 5px;
       box-sizing: border-box;
 
+      @media screen and (max-width: @tabletBreakpoint){
+
+      }
+
+      @media screen and (max-width: @mobileBreakpoint){
+        padding: 7px;
+        font-size: 1em;
+      }
+
       &:focus {
         outline: 0;
 
@@ -31,7 +41,7 @@ form {
       position: relative;
       padding-left: 35px;
       cursor: pointer;
-      margin: .5em auto;
+      margin: .5em auto 1em auto;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;

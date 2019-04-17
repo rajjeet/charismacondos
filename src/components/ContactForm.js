@@ -72,9 +72,9 @@ export function ContactForm() {
       <label htmlFor={"message"}>Message</label>
       <textarea style={{ width: "100%" }} rows={4} id={"message"} name={"message"}/>
     </div>
-    <div>
+    <div className={'checkbox-container'}>
       <label htmlFor={"message"} className={"container"}>Are you a realtor?
-        <input type={"checkbox"} id={"realtor"} name={"message"}/>
+        <input type={"checkbox"} id={"realtor"} name={"realtor"}/>
         <span className={"checkmark"}/>
       </label>
     </div>
