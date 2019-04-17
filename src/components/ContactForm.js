@@ -26,8 +26,13 @@ const handleSubmit = event => {
         if (xhr.readyState === 4 && xhr.status === 200) {
           form.reset()
           let message = document.getElementById('message-container')
-          message.style.opacity = 1;
-          setTimeout(() => message.style.opacity = 0, 3000)
+          message.style.opacity = 1
+          message.style.visibility = 'visible'
+          setTimeout(() => {
+            message.style.opacity = 0
+            message.style.visibility = 'hidden'
+
+          }, 3000)
         }
       }
       xhr.send(body)
