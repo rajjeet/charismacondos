@@ -1,6 +1,31 @@
 import React from "react"
 import "../components/ContactForm.css"
 
+function sendSesEmail(form, body) {
+  return new Promise((resolve, reject) => {
+    window.grecaptcha.execute("6LcUrZwUAAAAAKNtNJjf_quUmMkugTBYqDls2RRW", { action: "homepage" })
+      .then(function(token) {
+        body += `&token=${token}`;
+        let xhr = new XMLHttpRequest()
+        xhr.onerror = () => console.log("fail")
+        xhr.open("POST", "https://5gki6cwsdg.execute-api.us-east-1.amazonaws.com/Prod/contactme", true)
+        // xhr.open("POST", "http://127.0.0.1:3000/contactme", true)
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+        xhr.onload = () => {
+          if (xhr.readyState === 4) {
+            xhr.status < 300 ? resolve() : reject()
+          }
+        }
+        xhr.send(body)
+      })
+  })
+}
+
+const mockSendEmail = () =>
+  new Promise(resolve => setTimeout(() => resolve(), 2000))
+
+const sendEmail = process.env.NODE_ENV === "production" ? sendSesEmail : mockSendEmail
+
 const handleSubmit = event => {
   event.preventDefault()
   let form = event.target
@@ -11,33 +36,22 @@ const handleSubmit = event => {
   let message = formData.get("message")
   let realtor = formData.get("realtor")
 
-  let modelStates = document.getElementById('modal-1')
-  modelStates.checked = false;
+  let modelStates = document.getElementById("modal-1")
+  modelStates.checked = false
+  let body = `name=${fullName}&email=${email}&phone=${phone}&message=${message}&realtor=${realtor}`
 
-  window.grecaptcha.execute("6LcUrZwUAAAAAKNtNJjf_quUmMkugTBYqDls2RRW", { action: "homepage" })
-    .then(function(token) {
-      let xhr = new XMLHttpRequest()
-      let body = `name=${fullName}&email=${email}&phone=${phone}&message=${message}&realtor=${realtor}&token=${token}`
-      xhr.onerror = () => console.log("fail")
-      xhr.open("POST", "https://5gki6cwsdg.execute-api.us-east-1.amazonaws.com/Prod/contactme", true)
-      // xhr.open("POST", "http://127.0.0.1:3000/contactme", true)
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-      xhr.onload = () => {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          form.reset()
-          let message = document.getElementById('message-container')
-          message.style.opacity = 1
-          message.style.visibility = 'visible'
-          setTimeout(() => {
-            message.style.opacity = 0
-            message.style.visibility = 'hidden'
+  sendEmail(form, body)
+    .then(() => {
+      form.reset()
+      let messageDom = document.getElementById("message-container")
+      messageDom.style.opacity = 1
+      messageDom.style.visibility = "visible"
+      setTimeout(() => {
+        messageDom.style.opacity = 0
+        messageDom.style.visibility = "hidden"
 
-          }, 3000)
-        }
-      }
-      xhr.send(body)
+      }, 3000)
     })
-
 }
 
 export function ContactForm() {
