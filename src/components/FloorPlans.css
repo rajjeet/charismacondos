@@ -64,7 +64,6 @@ span {
   }
 }
 .modal {
-  z-index: 6;
   opacity: 0;
   visibility: hidden;
   position: fixed;
@@ -86,12 +85,16 @@ span {
 }
 .modal .modal__inner {
   transition: top .25s ease;
+  position: relative;
   width: 50vw;
   margin: 2em auto;
   overflow: auto;
   background: #fff;
   border-radius: 5px;
   padding: 1em 2em;
+}
+.modal .modal__inner h1 {
+  width: 70%;
 }
 @media screen and (max-width: 1023px) {
   .modal .modal__inner {
@@ -113,6 +116,7 @@ span {
   position: relative;
   float: right;
   cursor: pointer;
+  width: 20px;
 }
 .modal .modal__inner .modal__close:after,
 .modal .modal__inner .modal__close:before {
@@ -134,6 +138,16 @@ span {
 .modal .modal__inner .modal__close:before {
   transform: rotate(-45deg);
 }
+.modal-state {
+  display: none;
+}
+.modal-state:checked + .modal {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-state:checked + .modal .modal__inner {
+  top: 0;
+}
 .registerButton {
   width: 100%;
   box-shadow: none;
@@ -149,16 +163,6 @@ span {
 .registerButton:hover {
   background-color: #5b0000;
   cursor: pointer;
-}
-.modal-state {
-  display: none;
-}
-.modal-state:checked + .modal {
-  opacity: 1;
-  visibility: visible;
-}
-.modal-state:checked + .modal .modal__inner {
-  top: 0;
 }
 #floor-plans-container {
   width: 80%;

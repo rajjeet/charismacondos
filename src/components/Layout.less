@@ -80,7 +80,6 @@ p, span {
 
 
 .modal {
-  z-index: 6;
   opacity: 0;
   visibility: hidden;
   position: fixed;
@@ -104,12 +103,17 @@ p, span {
 
   .modal__inner {
     transition: top .25s ease;
+    position: relative;
     width: 50vw;
     margin: 2em auto;
     overflow: auto;
     background: #fff;
     border-radius: 5px;
     padding: 1em 2em;
+
+    h1 {
+      width: 70%;
+    }
 
     @media screen and (max-width: @computerBreakpoint) {
       width: 90vw;
@@ -128,6 +132,7 @@ p, span {
       position: relative;
       float: right;
       cursor: pointer;
+      width: 20px;
     }
 
     .modal__close:after,
@@ -155,6 +160,22 @@ p, span {
   }
 }
 
+.modal-state {
+  display: none;
+
+  &:checked + .modal {
+    opacity: 1;
+    visibility: visible;
+
+    .modal__inner {
+      top: 0;
+    }
+  }
+
+}
+
+
+
 .registerButton {
   width: 100%;
   box-shadow: none;
@@ -172,16 +193,4 @@ p, span {
     cursor: pointer;
   }
 
-}
-.modal-state {
-  display: none;
-}
-
-.modal-state:checked + .modal {
-  opacity: 1;
-  visibility: visible;
-
-  .modal__inner {
-    top: 0;
-  }
 }
