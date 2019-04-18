@@ -60,7 +60,6 @@ class Header extends Component {
             <a href={"#photo-gallery"} onClick={activateLink}>Gallery</a>
             <a href={"#location"} onClick={activateLink}>Location</a>
             <a href={"#amenities"} onClick={activateLink}>Amenities</a>
-            <a href={"#floor-plans"} onClick={activateLink}>Floor Plans</a>
           </div>
           <div id={"menu-toggle"}>
             <input id={"menu-toggle-checkbox"} type={"checkbox"}/>
@@ -76,9 +75,6 @@ class Header extends Component {
               </a>
               <a href={"#amenities"} onClick={activateLink}>
                 <li>Amenities</li>
-              </a>
-              <a href={"#floor-plans"} onClick={activateLink}>
-                <li>Floor Plans</li>
               </a>
             </ul>
           </div>
