@@ -41,7 +41,7 @@ class Header extends Component {
     return (
       <StaticQuery query={graphql`
     query {
-      mobilioLogo: file(relativePath: { eq: "mobilio_logo.png" }) {
+      logo: file(relativePath: { eq: "Charisma_logo.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
@@ -53,7 +53,7 @@ class Header extends Component {
         <div id={"page-header"} className="">
           <div id={"main-logo"}>
             <a href={"/#"}>
-              <GatsbyImage fluid={data.mobilioLogo.childImageSharp.fluid}/>
+              <GatsbyImage fluid={data.logo.childImageSharp.fluid}/>
             </a>
           </div>
           <div id={"header-links"}>
