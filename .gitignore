@@ -70,3 +70,4 @@ yarn-error.log
 .idea/
 *.css.map
 src/images/Home _ Mobilio*
+*.css

@@ -1,7 +1,7 @@
 import React from "react"
 import "./HeroBanner.css"
 import { graphql, StaticQuery } from "gatsby"
-import GatsbyImage from "gatsby-image"
+import Video from '../images/video.mp4'
 
 export const HeroBanner = () => (
   <StaticQuery query={graphql`
@@ -15,25 +15,13 @@ export const HeroBanner = () => (
       }
      }
    `} render={data => (
-    <div id={"hero-banner"} className={'section-container'}>
-      <div id={"main-card"}>
-        <div id={"main-logo"}>
-          <GatsbyImage fluid={data.logo.childImageSharp.fluid}/>
-        </div>
-        <div>
-          New Condo Development in Downtown Vaughan
-        </div>
-        <div id={"main-heading"}>
-          <span>43 Minutes to Everything</span>
-        </div>
-        <div id={"supporting-headline"}>
-          Your Ticket to Convenience, Community, and Connectivity in the GTA
-        </div>
+    <div id={"hero-banner"} >
+        <video autoPlay muted loop id="myVideo">
+          <source src={Video} type="video/mp4" />
+        </video>
         <div className={"call-to-action-container"}>
           <label htmlFor={"modal-1"} className="call-to-action-btn">Register</label>
         </div>
-      </div>
-
     </div>
   )}/>
 )

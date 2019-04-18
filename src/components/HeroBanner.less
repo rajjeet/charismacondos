@@ -1,71 +1,17 @@
 @import 'Layout';
 
 #hero-banner {
-  background: url('../images/mobilio_rendered_drawing_edited.jpeg') no-repeat center center scroll;
-  height: 700px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  width: 100%;
+  background: white;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
   overflow: hidden;
 
-  #main-logo {
-    max-width: 15%;
-    margin: 0 auto;
-
-    @media (max-width: @tabletBreakpoint) {
-      max-width: 30%;
-    }
-
-    img {
-    }
+  video {
+    width: 100vw;
   }
 
-  #main-card {
-    margin-top: 170px;
-    background: rgba(255, 255, 255, .4);
-    padding: 15px 10px;
-    border-radius: 10px;
-
-    @media (max-width: @tabletBreakpoint) {
-      margin-top: 155px;
-    }
-    @media (max-width: @computerBreakpoint) {
-    }
-  }
-
-
-  #main-heading {
-    color: dimgrey;
-    font-weight: bolder;
-    font-size: 4em;
-    vertical-align: bottom;
-    text-shadow: 2px 2px 2px whitesmoke;
-
-    @media (max-width: @tabletBreakpoint) {
-      font-size: 2em;
-    }
-
-    @media (max-width: @computerBreakpoint) {
-      font-size: 3em;
-    }
-  }
-
-  #supporting-headline {
-    color: #444;
-    font-size: 1.5em;
-    text-shadow: 2px 2px 2px white;
-    margin: 5px auto;
-
-    @media (max-width: @tabletBreakpoint) {
-      font-size: 1em;
-      margin: 1em auto;
-    }
-
-    @media (max-width: @computerBreakpoint) {
-      font-size: 1.2em;
-    }
+  .call-to-action-container {
   }
 
 }
