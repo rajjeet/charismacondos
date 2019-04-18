@@ -3,7 +3,7 @@ import "./HeroBanner.css"
 import { graphql, StaticQuery } from "gatsby"
 import Video from "../images/video.mp4"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faAngleDoubleDown, faSquare } from "@fortawesome/free-solid-svg-icons"
+import { faAngleDoubleDown} from "@fortawesome/free-solid-svg-icons"
 
 
 export const HeroBanner = () => (
@@ -26,9 +26,9 @@ export const HeroBanner = () => (
         <label htmlFor={"modal-1"} className="call-to-action-btn">Get VIP Access</label>
       </div>
       <div className={"call-to-action-container inline"}>
-        <label className="call-to-action-btn">Learn More &nbsp;
+        <button onClick={'#photo-gallery'} className="call-to-action-btn">Learn More &nbsp;
           <FontAwesomeIcon className={"amenitiesBackIcon"} icon={faAngleDoubleDown} size={"1x"}/>
-        </label>
+        </button>
       </div>
       <div>VIP Access gives you exclusive access to floor plans & pricing details to Charisma phase 3 Units, while
         quantities last!

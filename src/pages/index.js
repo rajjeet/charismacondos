@@ -22,8 +22,8 @@ class IndexPage extends Component {
         <Specs />
         <PhotoGallery/>
         <Location/>
-        <Amenities/>
         <Banner/>
+        <Amenities/>
         <FooterContact/>
 
         <input className="modal-state" id="modal-1" type="checkbox"/>
