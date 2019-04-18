@@ -6,7 +6,7 @@ import GatsbyImage from "gatsby-image"
 export const HeroBanner = () => (
   <StaticQuery query={graphql`
     query {
-      mobilioLogo: file(relativePath: { eq: "mobilio_logo.png" }) {
+      logo: file(relativePath: { eq: "Charisma-Condominiums-Vaughan.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
@@ -18,7 +18,7 @@ export const HeroBanner = () => (
     <div id={"hero-banner"} className={'section-container'}>
       <div id={"main-card"}>
         <div id={"main-logo"}>
-          <GatsbyImage fluid={data.mobilioLogo.childImageSharp.fluid}/>
+          <GatsbyImage fluid={data.logo.childImageSharp.fluid}/>
         </div>
         <div>
           New Condo Development in Downtown Vaughan

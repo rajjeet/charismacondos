@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import "./index.css"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import { FloorPlans } from "../components/FloorPlans"
 import { HeroBanner } from "../components/HeroBanner"
 import { Location } from "../components/Location"
 import { Amenities } from "../components/Amenities"
@@ -25,7 +24,6 @@ class IndexPage extends Component {
         <Location/>
         <Amenities/>
         <Banner/>
-        <FloorPlans/>
         <FooterContact/>
 
         <input className="modal-state" id="modal-1" type="checkbox"/>

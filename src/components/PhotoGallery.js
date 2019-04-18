@@ -53,63 +53,28 @@ export class PhotoGallery extends Component {
     return (
       <StaticQuery query={graphql`
   query {
-    neighbourhood: file(relativePath: { eq: "mobilio_neighbourhood.jpg" }) {
+    picture1: file(relativePath: { eq: "construction-location.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid
         } 
       }
     }
-    rendering2: file(relativePath: { eq: "mobilio_rendered_drawing.jpg" }) {
+    picture2: file(relativePath: { eq: "charismacondos.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid
         } 
       }
     }
-    transit: file(relativePath: { eq: "vmc_transit.jpg" }) {
+    picture3: file(relativePath: { eq: "Charisma-Condos-location-8-v44.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid
         } 
       }
     }    
-    transitMap: file(relativePath: { eq: "transit_map.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
-        } 
-      }
-    }
-    eco_info: file(relativePath: { eq: "mobilio_eco_info.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
-        } 
-      }
-    }
-    lobby: file(relativePath: { eq: "mobilio_rendered_drawing3.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    community: file(relativePath: { eq: "vaughan_community_rendering.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
-        } 
-      }
-    }
-    rooftop: file(relativePath: { eq: "rooftop.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
-        } 
-      }
-    }    
-    gym: file(relativePath: { eq: "mobilio_gym.jpg" }) {
+    picture4: file(relativePath: { eq: "charismacondos.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid
