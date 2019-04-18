@@ -13,8 +13,8 @@ import {
 
 function getAmenity(frontIcon, text) {
   return <div className="fa-layers">
-    <FontAwesomeIcon className={"amenitiesBackIcon"} icon={faSquare} size={"3x"} color={"darkred"}/>
-    <FontAwesomeIcon className={"amenitiesFrontIcon"} icon={frontIcon} size={"2x"} color={"white"}/>
+    <FontAwesomeIcon className={"amenitiesBackIcon"} icon={faSquare} size={"3x"} />
+    <FontAwesomeIcon className={"amenitiesFrontIcon"} icon={frontIcon} size={"2x"} />
     <div className={"amenity-text"}>{text}</div>
   </div>
 }
