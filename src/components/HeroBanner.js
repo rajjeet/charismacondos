@@ -1,7 +1,10 @@
 import React from "react"
 import "./HeroBanner.css"
 import { graphql, StaticQuery } from "gatsby"
-import Video from '../images/video.mp4'
+import Video from "../images/video.mp4"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAngleDoubleDown, faSquare } from "@fortawesome/free-solid-svg-icons"
+
 
 export const HeroBanner = () => (
   <StaticQuery query={graphql`
@@ -15,13 +18,21 @@ export const HeroBanner = () => (
       }
      }
    `} render={data => (
-    <div id={"hero-banner"} >
-        <video autoPlay muted loop id="myVideo">
-          <source src={Video} type="video/mp4" />
-        </video>
-        <div className={"call-to-action-container"}>
-          <label htmlFor={"modal-1"} className="call-to-action-btn">Register</label>
-        </div>
+    <div id={"hero-banner"} className={'section-container'}>
+      <video autoPlay muted loop id="myVideo">
+        <source src={Video} type="video/mp4"/>
+      </video>
+      <div className={"call-to-action-container inline"}>
+        <label htmlFor={"modal-1"} className="call-to-action-btn">Get VIP Access</label>
+      </div>
+      <div className={"call-to-action-container inline"}>
+        <label className="call-to-action-btn">Learn More &nbsp;
+          <FontAwesomeIcon className={"amenitiesBackIcon"} icon={faAngleDoubleDown} size={"1x"}/>
+        </label>
+      </div>
+      <div>VIP Access gives you exclusive access to floor plans & pricing details to Charisma phase 3 Units, while
+        quantities last!
+      </div>
     </div>
   )}/>
 )
