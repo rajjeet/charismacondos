@@ -73,20 +73,112 @@ export class PhotoGallery extends Component {
           ...GatsbyImageSharpFluid
         } 
       }
+    }      
+    picture5: file(relativePath: { eq: "breathness-of-fresh-air.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
     }    
-    picture4: file(relativePath: { eq: "charismacondos.jpg" }) {
+    picture6: file(relativePath: { eq: "height-of-luxury.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }    
+    picture7: file(relativePath: { eq: "new-lifestyle-awaits-you.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }    
+    picture8: file(relativePath: { eq: "world-at-doorstep.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }    
+    picture9: file(relativePath: { eq: "grand-entrance.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }    
+    picture10: file(relativePath: { eq: "wellness-courtyard.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }    
+    picture11: file(relativePath: { eq: "rooftop-skyview-lounge.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid
         } 
       }
     }
+    picture14: file(relativePath: { eq: "outdoor-pool-lounge.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }     
+    picture16: file(relativePath: { eq: "lounge.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }    
+    picture12: file(relativePath: { eq: "yoga-room.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }    
+    picture13: file(relativePath: { eq: "theatre-room.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }       
+    picture15: file(relativePath: { eq: "fitness-centre.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }     
+    picture18: file(relativePath: { eq: "vmc-subway-station.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }    
+    picture19: file(relativePath: { eq: "go-bus.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        } 
+      }
+    }    
    }
     `} render={data => (
         <div id={"photo-gallery-container"} className={"section-container"}>
           <div>
             <h1 className={"section-title"}>Gallery<span id={"photo-gallery"}/></h1>
-            <p>Charisma condo residents will experience the best of Vaughan's urban area, transit, shopping, and much more.</p>
+            <p>Charisma condo residents will experience the best of Vaughan's urban area, transit, shopping, and much
+              more.</p>
             <div id={"photo-container"}>
               {Object.keys(data).map(photo =>
                 renderPhotoSlide(photo, data[photo].childImageSharp.fluid),
