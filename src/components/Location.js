@@ -1,8 +1,11 @@
 import React from "react"
 import "./Location.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSquare } from "@fortawesome/free-solid-svg-icons"
 
 function getKpi(digit, timescale, caption) {
   return <div className={"kpi-card"}>
+    <FontAwesomeIcon className={"locationIcon"} icon={faSquare} size={"4x"} />
     <span>{digit}</span>
     <span>{timescale}</span>
     <div>{caption}</div>
@@ -20,7 +23,7 @@ export const Location = () => (
       {getKpi(1, 'min', 'Subway')}
       {getKpi(1, 'min', 'Shopping')}
       {getKpi(3, 'min', 'Highway')}
-      {getKpi(2, 'min', 'Entertainment')}
+      {getKpi(2, 'min', 'School')}
       {getKpi(2, 'min', 'Recreation')}
       {getKpi(2, 'min', 'Dining')}
     </div>

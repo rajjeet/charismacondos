@@ -1,7 +1,7 @@
 import React from "react"
 import "./HeroBanner.css"
 import { graphql, StaticQuery } from "gatsby"
-import Video from "../images/video.mp4"
+import Video from "../../static/video.mp4"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleDoubleDown} from "@fortawesome/free-solid-svg-icons"
 

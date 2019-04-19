@@ -23,27 +23,44 @@
     .kpi-card {
       display: inline-block;
       margin: 0 auto;
-      width: 15%;
+      width: 100px;
+      position: relative;
+      cursor: pointer;
+      opacity: .9;
+
+      &:hover {
+
+        opacity: 1;
+        transform: translateY(-.3em);
+        transition: transform .5s ease, opacity .5s;
+      }
 
 
       span:first-of-type {
+        position: absolute;
         margin: 0 auto;
-        font-size: 4em;
+        font-size: 3em;
         padding-bottom: 0;
+        width: 30%;
+        //left: 0;
+        top: -2px;
+        left: 25px;
         display: inline;
         font-weight: bold;
+        color: white;
 
         @media (max-width: @tabletBreakpoint) {
-          font-size: 2em;
         }
 
         @media (max-width: @computerBreakpoint) {
-          font-size: 2em;
         }
       }
 
-      span:first-of-type:hover {
-        color: darkred;
+      span:nth-of-type(2) {
+        position: absolute;
+        right: 25px;
+        bottom: 25px;
+        color: white;
       }
 
       span {
@@ -52,9 +69,6 @@
 
 
       @media (max-width: @computerBreakpoint) {
-        width: 20%;
-        margin: 0 5%;
-        text-align: left;
         div {
           display: inline;
           padding-left: .5em;
@@ -62,7 +76,7 @@
       }
 
       @media (max-width: @tabletBreakpoint) {
-        width: 40%;
+        //width: 40%;
         display: inline-block;
         text-align: center;
         div {
