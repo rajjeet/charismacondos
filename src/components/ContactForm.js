@@ -1,6 +1,6 @@
 import React from "react"
 import "../components/ContactForm.css"
-// import { CLIENT_RECAPTCHA_TOKEN, EMAIL_SERVICE_ENDPOINT } from "../../mail/config"
+// import { CLIENT_RECAPTCHA_TOKEN, EMAIL_SERVICE_ENDPOINT } from "../../aws/config"
 
 /*function sendSesEmail(form, body) {
   return new Promise((resolve, reject) => {

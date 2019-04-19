@@ -1,0 +1,93 @@
+Parameters:
+  CloudFrontUserAgentId:
+    Default: 8cbc44d1-4b99-4139-8989-aabf9e18c093
+    Description: Block access to S3 except for the specific CloudFront distribution
+      in this template
+    Type: String
+Resources:
+  Bucket:
+    Properties:
+      BucketName: charisma-condos
+      WebsiteConfiguration:
+        ErrorDocument: index.html
+        IndexDocument: index.html
+    Type: AWS::S3::Bucket
+  BucketPolicy:
+    Properties:
+      Bucket:
+        Ref: Bucket
+      PolicyDocument:
+        Id: PolicyForCloudFrontPrivateContent
+        Statement:
+        - Action: s3:GetObject
+          Condition:
+            StringEqualsIgnoreCase:
+              aws:UserAgent:
+                Ref: CloudFrontUserAgentId
+          Effect: Allow
+          Principal:
+            AWS: '*'
+          Resource:
+            Fn::Join:
+            - ''
+            - - 'arn:aws:s3:::'
+              - Ref: Bucket
+              - /*
+          Sid: PublicReadGetObject
+        Version: '2008-10-17'
+    Type: AWS::S3::BucketPolicy
+  Distribution:
+    Properties:
+      DistributionConfig:
+        Comment: Charisma Condos - Pre-construction in VMC 2019
+        DefaultCacheBehavior:
+          Compress: true
+          ForwardedValues:
+            QueryString: false
+          TargetOriginId: S3BucketWebsite
+          ViewerProtocolPolicy: redirect-to-https
+        DefaultRootObject: index.html
+        Enabled: true
+        Logging:
+          Bucket:
+            Fn::GetAtt:
+            - Bucket
+            - DomainName
+          Prefix: CloudFrontLogs
+        Origins:
+        - CustomOriginConfig:
+            OriginProtocolPolicy: http-only
+          DomainName:
+            Fn::GetAtt:
+            - Bucket
+            - DomainName
+          Id: S3BucketWebsite
+          OriginCustomHeaders:
+          - HeaderName: User-Agent
+            HeaderValue:
+              Ref: CloudFrontUserAgentId
+        PriceClass: PriceClass_100
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: true
+    Type: AWS::CloudFront::Distribution
+  HandleFormSubmit:
+    Properties:
+      CodeUri: s3://cf-templates-phullr2/9841aa5207770b59a522e91cfc28c8ac
+      Events:
+        FormsApi:
+          Properties:
+            Method: POST
+            Path: /contactme
+          Type: Api
+      Handler: index.handler
+      Policies:
+      - Statement:
+        - Action:
+          - ses:sendEmail
+          - ses:sendRawEmail
+          Effect: Allow
+          Resource: '*'
+        Version: '2012-10-17'
+      Runtime: nodejs8.10
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31

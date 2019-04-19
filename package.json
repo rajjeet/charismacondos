@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "charisma-condos",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "version": "1.0.0",
+  "author": "Rajjeet Phull <rajjeet.phull@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
@@ -33,12 +33,15 @@
   ],
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf .cache",
     "build": "gatsby build",
-    "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "prod": "npm run clean && npm run build && npm run serve",
+    "aws:package": "aws cloudformation package --template-file aws/template.yaml --s3-bucket cf-templates-phullr2 --output-template-file aws/output.template.yaml",
+    "aws:deploy": "aws cloudformation deploy --stack-name charisma-condos --template-file aws/output.template.yaml --capabilities CAPABILITY_IAM",
+    "aws:publish": "aws s3 sync public/ s3://charisma-condos --delete --exclude 'CloudFrontLogs*' --cache-control max-age=31536000"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,82 @@
+Transform: 'AWS::Serverless-2016-10-31'
+Parameters:
+  CloudFrontUserAgentId:
+    Type: "String"
+    Default: "8cbc44d1-4b99-4139-8989-aabf9e18c093"
+    Description: "Block access to S3 except for the specific CloudFront distribution in this template"
+Resources:
+  HandleFormSubmit:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Runtime: nodejs8.10
+      Handler: index.handler
+      CodeUri: ./
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - ses:sendEmail
+                - ses:sendRawEmail
+              Resource: '*'
+      Events:
+        FormsApi:
+          Type: Api
+          Properties:
+            Path: /contactme
+            Method: POST
+  Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: 'charisma-condos'
+      WebsiteConfiguration:
+        IndexDocument: 'index.html'
+        ErrorDocument: 'index.html'
+  BucketPolicy:
+    Type: 'AWS::S3::BucketPolicy'
+    Properties:
+      Bucket: !Ref Bucket
+      PolicyDocument:
+          Version: "2008-10-17"
+          Id: "PolicyForCloudFrontPrivateContent"
+          Statement:
+            - Sid: "PublicReadGetObject"
+              Effect: "Allow"
+              Principal:
+                AWS: "*"
+              Action: "s3:GetObject"
+              Resource: !Join
+                - ""
+                - - "arn:aws:s3:::"
+                  - !Ref Bucket
+                  - "/*"
+              Condition:
+                StringEqualsIgnoreCase:
+                  aws:UserAgent: !Ref CloudFrontUserAgentId
+  Distribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Comment: Charisma Condos - Pre-construction in VMC 2019
+        DefaultCacheBehavior:
+          Compress: true
+          ForwardedValues:
+            QueryString: false
+          TargetOriginId: S3BucketWebsite
+          ViewerProtocolPolicy: redirect-to-https
+        DefaultRootObject: index.html
+        Enabled: true
+        Logging:
+          Bucket: !GetAtt Bucket.DomainName
+          Prefix: CloudFrontLogs
+        Origins:
+          - DomainName: !GetAtt Bucket.DomainName
+            Id: S3BucketWebsite
+            OriginCustomHeaders:
+              - HeaderName: "User-Agent"
+                HeaderValue: !Ref CloudFrontUserAgentId
+            CustomOriginConfig:
+              OriginProtocolPolicy: "http-only"
+        PriceClass: PriceClass_100
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: true
