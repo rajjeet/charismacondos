@@ -2,43 +2,36 @@ import React from "react"
 import "./Specs.css"
 
 export const Specs = () => (
-  <div id={"specs-container"} className={'section-container'}>
+  <div id={"specs-container"} className={"section-container"}>
+    <h1 className={"section-title"}>
+      <span id={"specs"}/>
+    </h1>
     <table>
       <tbody>
       <tr>
+        <td>Address</td>
+        <td>-</td>
+        <td><a href={"/#location"}>8960 Jane St, Vaughan</a></td>
+      </tr>
+      <tr>
         <td>Number of stories</td>
         <td>-</td>
-        <td>21</td>
+        <td>28</td>
       </tr>
       <tr>
-        <td>Total Number of Suites</td>
+        <td>VIP Launch</td>
         <td>-</td>
-        <td>500</td>
+        <td>Mid Apr, 2019</td>
       </tr>
       <tr>
-        <td>Number of Suites/Floor</td>
+        <td>Builder</td>
         <td>-</td>
-        <td>19</td>
+        <td>Greenpark Homes</td>
       </tr>
       <tr>
-        <td>Parking Price</td>
+        <td>Status</td>
         <td>-</td>
-        <td>$55,000</td>
-      </tr>
-      <tr>
-        <td>Est. Maintenance</td>
-        <td>-</td>
-        <td>$0.55 / sq ft / month</td>
-      </tr>
-      <tr>
-        <td>Est. Occupancy</td>
-        <td>-</td>
-        <td>Spring 2022</td>
-      </tr>
-      <tr>
-        <td>Price Range</td>
-        <td>-</td>
-        <td>mid-$300s to mid-$650</td>
+        <td>Not yet for Sale</td>
       </tr>
       </tbody>
     </table>
