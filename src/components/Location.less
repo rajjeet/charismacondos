@@ -26,7 +26,7 @@
       width: 100px;
       position: relative;
       cursor: pointer;
-      opacity: .9;
+      opacity: 0;
 
       &:hover {
 
@@ -83,7 +83,26 @@
           display: block;
         }
       }
+
+
+
+
     }
+    .scroll-animate {
+      animation: animate .7s ease;
+      opacity: 1;
+    }
+
+    @keyframes animate {
+      from {
+        transform: translateY(-2em);
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
 
   }
 }
