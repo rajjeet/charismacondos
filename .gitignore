@@ -71,3 +71,4 @@ yarn-error.log
 *.css.map
 src/images/Home _ Mobilio*
 *.css
+config.js

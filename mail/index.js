@@ -1,16 +1,18 @@
+import { SERVER_RECAPTCHA_TOKEN, SOURCE_EMAIL, TARGET_EMAIL } from "./config"
+
 let axios = require("axios")
 let querystring = require("querystring")
 let AWS = require("aws-sdk")
 
 exports.handler = async (event) => {
 
-  let SECRET = "6LcUrZwUAAAAAAD7ByMzmCOysxlxLRxi7UvUhWn9"
+
   const data = querystring.parse(event.body)
   const token = data ? data.token : null
   if (token) {
     const response = await axios({
       method: "post",
-      url: `https://www.google.com/recaptcha/api/siteverify?secret=${SECRET}&response=${token}`,
+      url: `https://www.google.com/recaptcha/api/siteverify?secret=${SERVER_RECAPTCHA_TOKEN}&response=${token}`,
     })
     console.log('recaptcha response score', response.data.score)
     if (Number(response.data.score) >= 0.1) {
@@ -19,7 +21,7 @@ exports.handler = async (event) => {
 
       let params = {
         Destination: {
-          ToAddresses: ["rajjeet.phull@gmail.com"],
+          ToAddresses: [TARGET_EMAIL],
         },
         Message: {
           Body: {
@@ -32,10 +34,10 @@ exports.handler = async (event) => {
           },
           Subject: {
             Charset: "UTF-8",
-            Data: `Mobilio Condos Inquiry: ${data.name}`,
+            Data: `Charisma Condos Inquiry: ${data.name}`,
           },
         },
-        Source: "rajjeet.phull@gmail.com",
+        Source: SOURCE_EMAIL,
       }
       try {
         const result = await new AWS.SES({ apiVersion: "2010-12-01" })

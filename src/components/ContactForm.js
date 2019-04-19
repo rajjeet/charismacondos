@@ -1,15 +1,17 @@
 import React from "react"
 import "../components/ContactForm.css"
+import { CLIENT_RECAPTCHA_TOKEN, EMAIL_SERVICE_ENDPOINT } from "../../mail/config"
 
 function sendSesEmail(form, body) {
   return new Promise((resolve, reject) => {
-    window.grecaptcha.execute("6LcUrZwUAAAAAKNtNJjf_quUmMkugTBYqDls2RRW", { action: "homepage" })
+
+    window.grecaptcha.execute(CLIENT_RECAPTCHA_TOKEN, { action: "homepage" })
       .then(function(token) {
         body += `&token=${token}`;
         let xhr = new XMLHttpRequest()
         xhr.onerror = () => console.log("fail")
-        xhr.open("POST", "https://5gki6cwsdg.execute-api.us-east-1.amazonaws.com/Prod/contactme", true)
-        // xhr.open("POST", "http://127.0.0.1:3000/contactme", true)
+
+        xhr.open("POST", EMAIL_SERVICE_ENDPOINT, true)
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
         xhr.onload = () => {
           if (xhr.readyState === 4) {
@@ -40,7 +42,7 @@ const handleSubmit = event => {
   modelStates.checked = false
   let body = `name=${fullName}&email=${email}&phone=${phone}&message=${message}&realtor=${realtor}`
 
-  mockSendEmail(form, body)
+  sendEmail(form, body)
     .then(() => {
       form.reset()
       let messageDom = document.getElementById("message-container")
