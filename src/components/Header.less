@@ -2,13 +2,15 @@
 
 #page-header {
   width: 100%;
-  background: white;
   z-index: 2;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
   margin:  0 auto .2em auto;
+  position: fixed;
+  top: 0;
+  background-color: @secondaryBackgroundColor;
 
   #main-logo {
     display: inline-block;
@@ -143,9 +145,7 @@
   }
 }
 
-#page-header.sticky {
-  position: fixed;
-  top: 0;
-  background-color: #eeeeee;
+#page-header {
+
 
 }
