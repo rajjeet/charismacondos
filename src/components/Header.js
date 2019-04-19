@@ -16,14 +16,17 @@ const activateLink = (event) => {
     let checkbox = document.getElementById("menu-toggle-checkbox")
     if (checkbox.checked) checkbox.checked = false
     deactivateMenuLinks()
-    event.target.classList.add("active")
+    let target = event.target
+    target.classList.add("active")
+    setTimeout(() => window.addEventListener("scroll",
+      () => target.classList.remove("active"), { once: true }), 1000)
   }
 }
 
 class Header extends Component {
 
   componentDidMount() {
-    window.onscroll = () => {
+    window.addEventListener("scroll", () => {
       const header = document.getElementById("page-header")
       if (header) {
         const sticky = header.offsetTop
@@ -33,7 +36,7 @@ class Header extends Component {
           header.classList.remove("sticky")
         }
       }
-    }
+    })
 
   }
 
