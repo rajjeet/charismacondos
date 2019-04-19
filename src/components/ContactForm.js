@@ -54,7 +54,7 @@ const handleSubmit = event => {
     })
 }
 
-export function ContactForm() {
+export function ContactForm({callToActionText = 'Register'}) {
   return <form onSubmit={handleSubmit}>
     <div>
       <label htmlFor={"name"}>Name<span style={{ color: "red" }}>*</span></label>
@@ -78,7 +78,7 @@ export function ContactForm() {
         <span className={"checkmark"}/>
       </label>
     </div>
-    <button className={"registerButton"} type={"submit"}>Register</button>
+    <button className={"registerButton"} type={"submit"}>{callToActionText}</button>
     <p className={"disclaimer"}>
               <span>The information you provide is strictly confidential.
               This site is protected by reCAPTCHA and the Google </span>

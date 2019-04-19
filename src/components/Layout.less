@@ -51,6 +51,16 @@ p, span {
   margin-top: .2em;
 }
 
+.buttonAnimation {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+  transition: transform .5s ease;
+  cursor: pointer;
+}
+
 .inline {
   display: inline-block;
   margin: auto .5em;
@@ -58,7 +68,11 @@ p, span {
 }
 .call-to-action-container {
   margin: 1em .5em;
-  padding: .4em 0em;
+  padding: .4em 0;
+
+  &:hover {
+    .buttonAnimation();
+  }
 
   .call-to-action-btn {
     font-size: 2em;
@@ -71,14 +85,8 @@ p, span {
     border-radius: 10px;
     font-family: @fontFamily;
 
-    &:hover {
-      background-color: #7b0000;
-      cursor: pointer;
-    }
 
-    &:active {
-      background-color: #5b0000;
-    }
+
 
     @media (max-width: @tabletBreakpoint) {
       padding: .3em 0.5em;
@@ -198,7 +206,6 @@ p, span {
   font-family: @fontFamily;
 
   &:hover {
-    background-color: #5b0000;
-    cursor: pointer;
+    .buttonAnimation();
   }
 }
