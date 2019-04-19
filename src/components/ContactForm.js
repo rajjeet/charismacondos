@@ -40,7 +40,7 @@ const handleSubmit = event => {
   modelStates.checked = false
   let body = `name=${fullName}&email=${email}&phone=${phone}&message=${message}&realtor=${realtor}`
 
-  sendEmail(form, body)
+  mockSendEmail(form, body)
     .then(() => {
       form.reset()
       let messageDom = document.getElementById("message-container")
