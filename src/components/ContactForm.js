@@ -1,8 +1,8 @@
 import React from "react"
 import "../components/ContactForm.css"
-import { CLIENT_RECAPTCHA_TOKEN, EMAIL_SERVICE_ENDPOINT } from "../../mail/config"
+// import { CLIENT_RECAPTCHA_TOKEN, EMAIL_SERVICE_ENDPOINT } from "../../mail/config"
 
-function sendSesEmail(form, body) {
+/*function sendSesEmail(form, body) {
   return new Promise((resolve, reject) => {
 
     window.grecaptcha.execute(CLIENT_RECAPTCHA_TOKEN, { action: "homepage" })
@@ -21,12 +21,12 @@ function sendSesEmail(form, body) {
         xhr.send(body)
       })
   })
-}
+}*/
 
 const mockSendEmail = () =>
   new Promise(resolve => setTimeout(() => resolve(), 2000))
 
-const sendEmail = process.env.NODE_ENV === "production" ? sendSesEmail : mockSendEmail
+// const sendEmail = process.env.NODE_ENV === "production" ? sendSesEmail : mockSendEmail
 
 const handleSubmit = event => {
   event.preventDefault()
@@ -42,7 +42,7 @@ const handleSubmit = event => {
   modelStates.checked = false
   let body = `name=${fullName}&email=${email}&phone=${phone}&message=${message}&realtor=${realtor}`
 
-  sendEmail(form, body)
+  mockSendEmail(form, body)
     .then(() => {
       form.reset()
       let messageDom = document.getElementById("message-container")
