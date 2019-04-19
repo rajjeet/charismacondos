@@ -38,7 +38,7 @@ export class Location extends Component {
           </div>
 
           <iframe title={"googlemaps"} height="450"
-                  src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJvdrsxLkvK4gRg5m2IsjTerw&key=AIzaSyBwH66e9iE5lT856EiEJne_wcgBjJkh2uA"
+                  src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJT-M5LzwvK4gRri0nU4_FTf4&key=AIzaSyBwH66e9iE5lT856EiEJne_wcgBjJkh2uA"
                   allowFullScreen/>
         </div>
       </div>

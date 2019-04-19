@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Component } from "react"
 import "./Amenities.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -10,6 +10,7 @@ import {
   faCloudSun,
   faRunning,
 } from "@fortawesome/free-solid-svg-icons"
+import { setScrollAnimation } from "../helpers/scrollAnimation"
 
 function getAmenity(frontIcon, text) {
   return <div className="fa-layers">
@@ -19,15 +20,23 @@ function getAmenity(frontIcon, text) {
   </div>
 }
 
-export const Amenities = () => (
-  <div id={"amenities-container"} className={'section-container'}>
-    <h1 className={'section-title'}>Amenities<span id={"amenities"}/></h1>
-    <p>Live with luxury, convenience, and comfort</p>
-    {getAmenity(faFilm, "Theatre Room")}
-    {getAmenity(faGlassMartiniAlt, "Party Room with Bar and Kitchen")}
-    {getAmenity(faCloudSun, "Outdoor Terrace with Lounge, Fire Pit and BBQs")}
-    {getAmenity(faRunning, "Virtual & Yoga/Aerobics Studios")}
-    {getAmenity(faBaby, "Kids Play Room and Outdoor Play Area")}
-    {getAmenity(faDumbbell, "Fitness Centre")}
-  </div>
-)
+export class Amenities extends Component {
+  componentDidMount() {
+    setScrollAnimation("fa-layers", "scroll-animate")
+  }
+
+  render() {
+    return (
+      <div id={"amenities-container"} className={"section-container"}>
+        <h1 className={"section-title"}>Amenities<span id={"amenities"}/></h1>
+        <p>Live with luxury, convenience, and comfort</p>
+        {getAmenity(faFilm, "Theatre Room")}
+        {getAmenity(faGlassMartiniAlt, "Party Room with Bar and Kitchen")}
+        {getAmenity(faCloudSun, "Outdoor Terrace with Lounge, Fire Pit and BBQs")}
+        {getAmenity(faRunning, "Virtual & Yoga/Aerobics Studios")}
+        {getAmenity(faBaby, "Kids Play Room and Outdoor Play Area")}
+        {getAmenity(faDumbbell, "Fitness Centre")}
+      </div>
+    )
+  }
+}
