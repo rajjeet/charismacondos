@@ -13,13 +13,23 @@
     font-size: 1.2em;
 
     @media (max-width: @mobileBreakpoint) {
-    font-size: .8em;
-  }
+      font-size: .8em;
+    }
 
     tr {
       td:first-of-type {
         text-align: right;
         font-weight: bold;
+      }
+
+      a {
+        text-decoration-line: none;
+          color: @sponsorColor;
+
+        &:hover {
+          color: @primaryBtnColor;
+        }
+
       }
     }
   }
