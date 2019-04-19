@@ -2,7 +2,6 @@ export function setScrollAnimation(elementClassName, animationClassName) {
 
 // get the element to animate
   const elements = document.getElementsByClassName(elementClassName)
-  console.log(elements.length)
 // listen for scroll event and call animate function
   document.addEventListener("scroll", animate)
 
