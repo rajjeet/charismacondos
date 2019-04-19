@@ -86,7 +86,7 @@ export class PhotoGallery extends Component {
         <div id={"photo-gallery-container"} className={"section-container"}>
           <div>
             <h1 className={"section-title"}>Gallery<span id={"photo-gallery"}/></h1>
-            <p>Mobilio Residents will experience the best of Vaughan's urban area, transit, shopping, and much more.</p>
+            <p>Charisma condo residents will experience the best of Vaughan's urban area, transit, shopping, and much more.</p>
             <div id={"photo-container"}>
               {Object.keys(data).map(photo =>
                 renderPhotoSlide(photo, data[photo].childImageSharp.fluid),

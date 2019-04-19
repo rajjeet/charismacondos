@@ -16,8 +16,8 @@ export const Location = () => (
   <div id={"location-container"} className={'section-container'}>
   <div id={"location-inner-container"}>
     <h1 className={'section-title'}>Location<span id={'location'} /></h1>
-    <p>Just north of Toronto, a new neighbourhood in Vaughan Metropolitan Centre rises. Welcome to Mobilio, situated at
-      the epicentre of connectivity, convenience and innovation, and only steps away from the subway. </p>
+    <p>Just north of Toronto, a new neighbourhood in Vaughan Metropolitan Centre rises. Welcome to Charisma Condos, situated at
+      the epicentre of connectivity, convenience and innovation, and only steps away from Vaughan Mills. </p>
 
     <div id={"location-kpi"}>
       {getKpi(1, 'min', 'Subway')}
