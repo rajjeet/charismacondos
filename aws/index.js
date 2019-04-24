@@ -1,12 +1,11 @@
-import { SERVER_RECAPTCHA_TOKEN, SOURCE_EMAIL, TARGET_EMAIL } from "./config"
+const { SERVER_RECAPTCHA_TOKEN, SOURCE_EMAIL, TARGET_EMAIL } = require("./config")
 
 let axios = require("axios")
 let querystring = require("querystring")
 let AWS = require("aws-sdk")
 
 exports.handler = async (event) => {
-
-
+  console.log('SOURCE EMAIL', SOURCE_EMAIL)
   const data = querystring.parse(event.body)
   const token = data ? data.token : null
   if (token) {
@@ -14,7 +13,7 @@ exports.handler = async (event) => {
       method: "post",
       url: `https://www.google.com/recaptcha/api/siteverify?secret=${SERVER_RECAPTCHA_TOKEN}&response=${token}`,
     })
-    console.log('recaptcha response score', response.data.score)
+    console.log("recaptcha response score", response.data.score)
     if (Number(response.data.score) >= 0.1) {
 
       AWS.config.update({ region: "us-east-1" })
@@ -28,7 +27,7 @@ exports.handler = async (event) => {
             Text: {
               Charset: "UTF-8",
               Data: Object.keys(data)
-                .filter(key => key !== "token" && data[key].trim() !== '')
+                .filter(key => key !== "token" && data[key].trim() !== "")
                 .reduce((a, v) => a + `${v}: ${data[v]}\n`, ""),
             },
           },
@@ -57,7 +56,7 @@ exports.handler = async (event) => {
   }
   return {
     statusCode: 400,
-    headers: { "Access-Control-Allow-Origin": "*" }
+    headers: { "Access-Control-Allow-Origin": "*" },
   }
 
 }

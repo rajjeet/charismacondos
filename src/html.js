@@ -24,7 +24,7 @@ export default function HTML(props) {
       dangerouslySetInnerHTML={{ __html: props.body }}
     />
     {props.postBodyComponents}
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcUrZwUAAAAAKNtNJjf_quUmMkugTBYqDls2RRW"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ldo258UAAAAALhOZmw_3ZrQunk4QqCoRjGLI4DV"></script>
     </body>
     </html>
   )

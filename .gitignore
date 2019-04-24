@@ -72,3 +72,4 @@ yarn-error.log
 src/images/Home _ Mobilio*
 *.css
 config.js
+aws/output.template.yaml
