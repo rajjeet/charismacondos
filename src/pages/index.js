@@ -17,7 +17,8 @@ class IndexPage extends Component {
   render() {
     return (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
+        <SEO title="Charisma Condos"
+             keywords={[`condos vaughan mills`, `condo near subway`, `buy condos vaughan`, `book condos vaughan`, `condos north york`]}/>
         <Message/>
         <HeroBanner/>
         <Specs/>
