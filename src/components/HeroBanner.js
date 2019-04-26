@@ -31,7 +31,7 @@ export const HeroBanner = () => (
         </button>
       </div>
       <div id={"vip-description"}><strong>VIP Access</strong> gives you exclusive access to floor plans, pricing
-        details and booking process for Charisma phase 3 Units, while
+        details and booking process for Charisma phase 2 Units, while
         quantities last!
       </div>
     </div>

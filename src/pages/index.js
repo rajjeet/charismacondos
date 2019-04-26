@@ -11,6 +11,7 @@ import { FooterContact } from "../components/FooterContact"
 import { Specs } from "../components/Specs"
 import { Message } from "../components/Message"
 import { ContactForm } from "../components/ContactForm"
+import { Disclaimer } from "../components/Disclaimer"
 
 class IndexPage extends Component {
   render() {
@@ -19,12 +20,13 @@ class IndexPage extends Component {
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
         <Message/>
         <HeroBanner/>
-        <Specs />
+        <Specs/>
         <PhotoGallery/>
         <Location/>
         <Banner/>
         <Amenities/>
         <FooterContact/>
+        <Disclaimer/>
 
         <input className="modal-state" id="modal-1" type="checkbox"/>
         <div className="modal">

@@ -21,7 +21,7 @@ export const Specs = () => (
       <tr>
         <td>VIP Launch</td>
         <td>-</td>
-        <td>Mid Apr, 2019</td>
+        <td>Early May, 2019</td>
       </tr>
       <tr>
         <td>Builder</td>
@@ -31,7 +31,7 @@ export const Specs = () => (
       <tr>
         <td>Status</td>
         <td>-</td>
-        <td>Not yet for Sale</td>
+        <td>Available for Reservation</td>
       </tr>
       </tbody>
     </table>
