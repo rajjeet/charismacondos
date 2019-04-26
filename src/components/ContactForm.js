@@ -7,7 +7,7 @@ function sendSesEmail(form, body) {
 
     window.grecaptcha.execute(CLIENT_RECAPTCHA_TOKEN, { action: "homepage" })
       .then(function(token) {
-        body += `&token=${token}`;
+        body += `&token=${token}`
         let xhr = new XMLHttpRequest()
         xhr.onerror = () => console.log("fail")
 
@@ -24,7 +24,7 @@ function sendSesEmail(form, body) {
 }
 
 const mockSendEmail = () =>
-  new Promise(resolve => setTimeout(() => resolve(), 2000))
+  new Promise(resolve => setTimeout(() => resolve(), 3000))
 
 const sendEmail = process.env.NODE_ENV === "production" ? sendSesEmail : mockSendEmail
 
@@ -39,11 +39,17 @@ const handleSubmit = event => {
   let realtor = formData.get("realtor") ? "Yes" : "No"
 
   let modelStates = document.getElementById("modal-1")
-  modelStates.checked = false
+  let registerButton = form.querySelector(".registerButton")
+  let loadingAnimation = form.querySelector('.lds-ring')
+  loadingAnimation.style.visibility = 'visible'
+  registerButton.disabled = true
   let body = `name=${fullName}&email=${email}&phone=${phone}&message=${message}&realtor=${realtor}`
 
   sendEmail(form, body)
     .then(() => {
+      modelStates.checked = false
+      registerButton.disabled = false
+      loadingAnimation.style.visibility = 'hidden';
       form.reset()
       let messageDom = document.getElementById("message-container")
       messageDom.style.opacity = 1
@@ -56,7 +62,7 @@ const handleSubmit = event => {
     })
 }
 
-export function ContactForm({callToActionText = 'Register'}) {
+export function ContactForm({ callToActionText = "Register" }) {
   return <form onSubmit={handleSubmit}>
     <div>
       <label htmlFor={"name"}>Name<span style={{ color: "red" }}>*</span></label>
@@ -74,13 +80,21 @@ export function ContactForm({callToActionText = 'Register'}) {
       <label htmlFor={"message"}>Message</label>
       <textarea style={{ width: "100%" }} rows={4} id={"message"} name={"message"}/>
     </div>
-    <div className={'checkbox-container'}>
+    <div className={"checkbox-container"}>
       <label htmlFor={"message"} className={"container"}>Are you a realtor?
         <input type={"checkbox"} id={"realtor"} name={"realtor"}/>
         <span className={"checkmark"}/>
       </label>
     </div>
-    <button className={"registerButton"} type={"submit"}>{callToActionText}</button>
+    <button className={"registerButton"} type={"submit"}>&nbsp;&nbsp;{callToActionText}
+      <div className="lds-ring">
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+      </div>
+    </button>
+
     <p className={"disclaimer"}>
               <span>The information you provide is strictly confidential.
               This site is protected by reCAPTCHA and the Google </span>
