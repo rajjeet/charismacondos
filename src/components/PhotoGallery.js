@@ -36,11 +36,13 @@ function goToAdjacentSlide(number = 1, isUserClick = false) {
 }
 
 function renderPhotoSlide(name, image) {
-  return <div key={name} className="photo-slide fade">
-    <div className="photo">
-      <Img fluid={image}/>
+  return (
+    <div key={name} className="photo-slide fade">
+      <div className="photo">
+        <Img fluid={image}/>
+      </div>
     </div>
-  </div>
+  )
 }
 
 export class PhotoGallery extends Component {

@@ -10,8 +10,8 @@ import { PhotoGallery } from "../components/PhotoGallery"
 import { FooterContact } from "../components/FooterContact"
 import { Specs } from "../components/Specs"
 import { Message } from "../components/Message"
-import { ContactForm } from "../components/ContactForm"
 import { Disclaimer } from "../components/Disclaimer"
+import { CallToActionModal } from "../components/CallToActionModal"
 
 class IndexPage extends Component {
   render() {
@@ -28,16 +28,7 @@ class IndexPage extends Component {
         <Amenities/>
         <FooterContact/>
         <Disclaimer/>
-
-        <input className="modal-state" id="modal-1" type="checkbox"/>
-        <div className="modal">
-          <label className="modal__bg" htmlFor="modal-1"/>
-          <div className="modal__inner">
-            <label className="modal__close" htmlFor="modal-1"/>
-            <h1>Register</h1>
-            <ContactForm/>
-          </div>
-        </div>
+        <CallToActionModal/>
       </Layout>
     )
   }
