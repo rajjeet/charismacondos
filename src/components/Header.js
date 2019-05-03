@@ -4,6 +4,7 @@ import React, { Component } from "react"
 import "./Header.css"
 import GatsbyImage from "gatsby-image"
 import styled from "styled-components"
+import * as theme from "../shared/theme"
 
 const S = {};
 
@@ -33,6 +34,24 @@ S.HeaderLinks = styled.div`
   margin: 4px 1em;
 `
 
+S.Link = styled.a`
+  padding: 6px 6px;
+  margin: 3px 3px;
+  font-size: 1em;
+  display: inline-block;
+  border-radius: 5px;
+  text-decoration: none;
+  color: dimgrey;
+  
+  :hover, .active {
+    background-color: ${theme.primaryColor};
+    color: white;
+  }
+    
+  @media (max-width: ${theme.tabletBreakpoint}){
+    font-size: .8em;
+  }
+`
 
 
 function deactivateMenuLinks() {
@@ -92,9 +111,9 @@ class Header extends Component {
             </a>
           </S.Logo>
           <S.HeaderLinks id={"header-links"}>
-            <a href={"#photo-gallery"} onClick={activateLink}>Gallery</a>
-            <a href={"#location"} onClick={activateLink}>Location</a>
-            <a href={"#amenities"} onClick={activateLink}>Amenities</a>
+            <S.Link href={"#photo-gallery"} onClick={activateLink}>Gallery</S.Link>
+            <S.Link href={"#location"} onClick={activateLink}>Location</S.Link>
+            <S.Link href={"#amenities"} onClick={activateLink}>Amenities</S.Link>
           </S.HeaderLinks>
           <div id={"menu-toggle"}>
             <input id={"menu-toggle-checkbox"} type={"checkbox"}/>
