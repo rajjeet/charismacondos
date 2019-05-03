@@ -3,6 +3,37 @@ import PropTypes from "prop-types"
 import React, { Component } from "react"
 import "./Header.css"
 import GatsbyImage from "gatsby-image"
+import styled from "styled-components"
+
+const S = {};
+
+S.Header = styled.div`
+  width: 100%;
+  z-index: 2;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  margin:  0 auto .2em auto;
+  position: fixed;
+  top: 0;
+  background-color: #eee;
+`
+S.Logo = styled.div`
+  display: inline-block;
+  width: 100px;
+  max-height: 32px;
+  margin: 3px 3px;
+`
+S.HeaderLinks = styled.div`
+  display: inline-block;
+  width: 70%;
+  float: right;
+  text-align: right;
+  margin: 4px 1em;
+`
+
+
 
 function deactivateMenuLinks() {
   if (typeof document !== undefined) {
@@ -22,6 +53,7 @@ const activateLink = (event) => {
       () => target.classList.remove("active"), { once: true }), 1000)
   }
 }
+
 
 class Header extends Component {
 
@@ -53,17 +85,17 @@ class Header extends Component {
       }
      }
    `} render={data => (
-        <div id={"page-header"} className="">
-          <div id={"main-logo"}>
+        <S.Header id={"page-header"}>
+          <S.Logo id={"main-logo"}>
             <a href={"/#"}>
               <GatsbyImage fluid={data.logo.childImageSharp.fluid}/>
             </a>
-          </div>
-          <div id={"header-links"}>
+          </S.Logo>
+          <S.HeaderLinks id={"header-links"}>
             <a href={"#photo-gallery"} onClick={activateLink}>Gallery</a>
             <a href={"#location"} onClick={activateLink}>Location</a>
             <a href={"#amenities"} onClick={activateLink}>Amenities</a>
-          </div>
+          </S.HeaderLinks>
           <div id={"menu-toggle"}>
             <input id={"menu-toggle-checkbox"} type={"checkbox"}/>
             <span/>
@@ -81,7 +113,7 @@ class Header extends Component {
               </a>
             </ul>
           </div>
-        </div>
+        </S.Header>
 
       )
       }/>

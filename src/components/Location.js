@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import "./Location.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSquare } from "@fortawesome/free-solid-svg-icons"
-import { setScrollAnimation } from "../helpers/scrollAnimation"
+import { setScrollAnimation } from "../shared/scrollAnimation"
 
 function getKpi(digit, timescale, caption) {
   return <div className={"kpi-card"}>

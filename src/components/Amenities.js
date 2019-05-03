@@ -10,7 +10,7 @@ import {
   faCloudSun,
   faRunning,
 } from "@fortawesome/free-solid-svg-icons"
-import { setScrollAnimation } from "../helpers/scrollAnimation"
+import { setScrollAnimation } from "../shared/scrollAnimation"
 
 function getAmenity(frontIcon, text) {
   return <div className="fa-layers">
