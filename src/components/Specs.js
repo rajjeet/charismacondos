@@ -1,8 +1,47 @@
 import React from "react"
-import "./Specs.css"
+import styled from "styled-components"
+import * as theme from "../shared/theme"
+
+const S = {
+  Specs: styled.div`
+  background: #eee;
+
+  h1 {
+    text-align: center;
+  }
+
+  table {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.2em;
+
+    @media (max-width: ${theme.mobileBreakpoint}) {
+      font-size: .8em;
+    }
+
+    tr {
+      td:first-of-type {
+        text-align: right;
+        font-weight: bold;
+      }
+
+      a {
+        text-decoration-line: none;
+          color: ${theme.sponsorColor};
+
+        :hover {
+          color: ${theme.primaryBtnColor};
+        }
+
+      }
+    }
+  }
+  `
+}
+
 
 export const Specs = () => (
-  <div id={"specs-container"} className={"section-container"}>
+  <S.Specs id={"specs-container"} className={"section-container"}>
     <h1 className={"section-title"}>
       <span id={"specs"}/>
     </h1>
@@ -35,5 +74,5 @@ export const Specs = () => (
       </tr>
       </tbody>
     </table>
-  </div>
+  </S.Specs>
 )
