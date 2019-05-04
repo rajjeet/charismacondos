@@ -1,24 +1,39 @@
 import React from "react"
-import "./HeroBanner.css"
-import { graphql, StaticQuery } from "gatsby"
 import Video from "../../static/video.mp4"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons"
+import styled from "styled-components"
+import * as theme from "../shared/theme"
 
+const S = {
+   HeaderContainer: styled.div`
+    background: rgba(84, 183, 162, .2);
+    padding-top: 0;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 20px solid ${theme.sponsorColor};
+    margin-top: 2.8em;
+    video {
+      width: 100vw;
+      max-height: 95vh;
+      overflow: auto;
+    }
+  
+    #vip-description {
+      width: 90%;
+      margin: 0 auto;
+      font-size: ${theme.standardFontSize};
+  
+      @media (max-width: ${theme.mobileBreakpoint}){
+        font-size: ${theme.mobileFontSize};
+      }
+    }
+`
+}
 
 export const HeroBanner = () => (
-  <StaticQuery query={graphql`
-    query {
-      logo: file(relativePath: { eq: "Charisma-Condominiums-Vaughan.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-     }
-   `} render={data => (
-    <div id={"hero-banner"} className={"section-container"}>
+    <S.HeaderContainer id={"hero-banner"} className={"section-container"}>
       <video autoPlay muted loop id="myVideo">
         <source src={Video} type="video/mp4"/>
       </video>
@@ -34,8 +49,7 @@ export const HeroBanner = () => (
         details and booking process for Charisma phase 2 Units, while
         quantities last!
       </div>
-    </div>
-  )}/>
+    </S.HeaderContainer>
 )
 
 

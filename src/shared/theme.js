@@ -10,3 +10,4 @@ export const tabletBreakpoint = "660px"
 export const computerBreakpoint = "1023px"
 export const standardFontSize = "1.2em"
 export const mobileFontSize = ".8em"
+export const fontFamily = "Ubuntu, Geneva, sans-serif";
