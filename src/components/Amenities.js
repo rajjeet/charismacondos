@@ -106,7 +106,7 @@ export class Amenities extends Component {
 
   render() {
     return (
-      <S.AmenitiesContainer id={"amenities-container"} className={"section-container"}>
+      <S.AmenitiesContainer className={"section-container"}>
         <h1 className={"section-title"}>Amenities<span id={"amenities"}/></h1>
         <p>Live with luxury, convenience, and comfort</p>
         {getAmenity(faFilm, "Theatre Room")}

@@ -115,3 +115,25 @@ p, span {
     cursor: pointer;
   }
 }
+
+.registerButton {
+  width: 100%;
+  box-shadow: none;
+  padding: 7px 5px;
+  font-size: 2em;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: @primaryBtnColor;
+  color: whitesmoke;
+  font-family: @fontFamily;
+  cursor: pointer;
+
+  &:disabled {
+    background: fade(@primaryBtnColor, 50%);
+  }
+
+  &:hover {
+    .buttonAnimation();
+  }
+}
