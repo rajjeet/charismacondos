@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import "./PhotoGallery.css"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled, {keyframes} from "styled-components"
